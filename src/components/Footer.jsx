@@ -1,6 +1,13 @@
-import { MapPin, Phone, Mail, Facebook, Instagram, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Instagram, Clock, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
+  const handleWhatsApp = () => {
+    const phoneNumber = '919825459761';
+    const message = 'Hello! I would like to know more about your products.';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-12">
@@ -45,7 +52,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-lg font-semibold mb-4">Follow Us</h4>
+            <h4 className="text-white text-lg font-semibold mb-4">Connect With Us</h4>
             <div className="flex gap-4 mb-6">
               <a
                 href="https://facebook.com"
@@ -63,10 +70,23 @@ export default function Footer() {
               >
                 <Instagram size={20} />
               </a>
+              <button
+                onClick={handleWhatsApp}
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-500 transition-colors"
+              >
+                <MessageCircle size={20} />
+              </button>
             </div>
+            <button
+              onClick={handleWhatsApp}
+              className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors text-sm font-medium mb-3 w-full"
+            >
+              <MessageCircle size={16} className="inline mr-2" />
+              Chat on WhatsApp
+            </button>
             <a
               href="#"
-              className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg transition-colors text-sm font-medium"
+              className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg transition-colors text-sm font-medium w-full text-center"
             >
               Download Catalog
             </a>

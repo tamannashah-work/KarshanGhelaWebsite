@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageCircle } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 export default function Contact() {
@@ -74,6 +74,13 @@ export default function Contact() {
     }
   };
 
+  const handleWhatsApp = () => {
+    const phoneNumber = '919825459761';
+    const message = 'Hello! I would like to know more about your products.';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-amber-50">
       <div className="container mx-auto px-4">
@@ -131,6 +138,25 @@ export default function Contact() {
                   <h3 className="font-semibold text-gray-900 mb-2">Business Hours</h3>
                   <p className="text-gray-600">9:30 AM - 7:30 PM</p>
                   <p className="text-gray-500 text-sm">All Days</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="text-white" size={24} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-gray-900 mb-2">Quick Chat on WhatsApp</h3>
+                  <p className="text-gray-600 mb-4 text-sm">Get instant responses to your queries</p>
+                  <button
+                    onClick={handleWhatsApp}
+                    className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-medium transition-all flex items-center gap-2 w-full justify-center"
+                  >
+                    <MessageCircle size={20} />
+                    Chat on WhatsApp
+                  </button>
                 </div>
               </div>
             </div>

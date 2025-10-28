@@ -1,16 +1,12 @@
 import { Menu, X, Phone, MapPin } from 'lucide-react';
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
-    }
-  };
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
@@ -32,7 +28,7 @@ export default function Header() {
 
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
               GK
             </div>
@@ -40,24 +36,33 @@ export default function Header() {
               <h1 className="text-xl sm:text-2xl font-bold text-gray-800">Gandhi Karshan Ghela</h1>
               <p className="text-xs text-gray-600 hidden sm:block">Since 1920</p>
             </div>
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+            <Link
+              to="/"
+              className={`transition-colors font-medium ${isActive('/') ? 'text-amber-600' : 'text-gray-700 hover:text-amber-600'}`}
+            >
               Home
-            </button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+            </Link>
+            <Link
+              to="/about"
+              className={`transition-colors font-medium ${isActive('/about') ? 'text-amber-600' : 'text-gray-700 hover:text-amber-600'}`}
+            >
               About Us
-            </button>
-            <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+            </Link>
+            <Link
+              to="/products"
+              className={`transition-colors font-medium ${isActive('/products') ? 'text-amber-600' : 'text-gray-700 hover:text-amber-600'}`}
+            >
               Products
-            </button>
-            <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium">
-              Testimonials
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+            </Link>
+            <Link
+              to="/contact"
+              className={`transition-colors font-medium ${isActive('/contact') ? 'text-amber-600' : 'text-gray-700 hover:text-amber-600'}`}
+            >
               Contact
-            </button>
+            </Link>
           </div>
 
           <button
@@ -71,21 +76,34 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t pt-4 animate-fadeIn">
             <div className="flex flex-col gap-4">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium text-left">
+              <Link
+                to="/"
+                onClick={() => setIsMenuOpen(false)}
+                className={`transition-colors font-medium text-left ${isActive('/') ? 'text-amber-600' : 'text-gray-700 hover:text-amber-600'}`}
+              >
                 Home
-              </button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium text-left">
+              </Link>
+              <Link
+                to="/about"
+                onClick={() => setIsMenuOpen(false)}
+                className={`transition-colors font-medium text-left ${isActive('/about') ? 'text-amber-600' : 'text-gray-700 hover:text-amber-600'}`}
+              >
                 About Us
-              </button>
-              <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium text-left">
+              </Link>
+              <Link
+                to="/products"
+                onClick={() => setIsMenuOpen(false)}
+                className={`transition-colors font-medium text-left ${isActive('/products') ? 'text-amber-600' : 'text-gray-700 hover:text-amber-600'}`}
+              >
                 Products
-              </button>
-              <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium text-left">
-                Testimonials
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium text-left">
+              </Link>
+              <Link
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className={`transition-colors font-medium text-left ${isActive('/contact') ? 'text-amber-600' : 'text-gray-700 hover:text-amber-600'}`}
+              >
                 Contact
-              </button>
+              </Link>
             </div>
           </div>
         )}
