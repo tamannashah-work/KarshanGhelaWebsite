@@ -12,12 +12,12 @@ export default function Header() {
       {/* Orange bar with logo overlay */}
       <div className="relative bg-amber-600 h-12 sm:h-10 flex items-center justify-between px-4 sm:px-8">
         {/* Logo overlapping the bar */}
-        <div className="absolute left-4 sm:left-6 -bottom-10 sm:-bottom-15 z-20">
+        <div className="relative md:pt-12 md:mt-4 z-20">
           <Link to="/">
             <img
               src="images/Karshan-Ghela-Logo-wob-1-150x150.png"
               alt="Karshan Ghela Logo"
-              className="w-20 sm:w-24 h-auto pt-12 sm:pt-12 mt-6 sm:mt-5"
+              className="w-20 sm:w-24 h-auto "
             />
           </Link>
         </div>

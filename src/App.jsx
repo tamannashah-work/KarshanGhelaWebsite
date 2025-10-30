@@ -9,7 +9,7 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="app min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
           <Routes>

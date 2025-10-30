@@ -65,7 +65,7 @@ export default function Testimonials() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 md:p-12 shadow-xl">
+          <div className="relative bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 md:p-12 shadow-xl">
             <div className="absolute top-8 left-8 text-amber-300 opacity-50">
               <Quote size={48} />
             </div>
@@ -89,7 +89,7 @@ export default function Testimonials() {
             <div className="text-center relative z-10">
               <div className="flex justify-center mb-4">
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
-                  <Star key={i} size={24} className="text-amber-500 fill-amber-500" />
+                  <Star key={i} size={24} className="text-orange-500 fill-orange-500" />
                 ))}
               </div>
 
@@ -98,7 +98,7 @@ export default function Testimonials() {
               </p>
 
               <div className="flex items-center justify-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
                   {currentTestimonial.customer_name.charAt(0)}
                 </div>
                 <div className="text-left">

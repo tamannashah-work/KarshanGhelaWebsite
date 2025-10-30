@@ -21,14 +21,13 @@ export default function Hero() {
       </video>
 
       <div className="absolute inset-0 bg-black/40"></div>
-
       <div className="relative z-10 h-full flex items-center justify-center">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto p-5 m-2">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fadeIn">
-            <div className="inline-block bg-amber-500/90 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+            <div className="inline-block bg-amber-500/60 backdrop-blur text-white rounded px-6 py-3 text-sm font-semibold shadow-lg">
               Heritage Since 1920
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-2xl">
               Authentic Indian <span className="text-amber-400">Spices & Masalas</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto drop-shadow-lg">

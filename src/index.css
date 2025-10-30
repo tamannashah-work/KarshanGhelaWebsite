@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+body {      
+    overscroll-behavior-y:none; 
+    overscroll-behavior-x: none;  
+    /* hides scrollbar */
+  -ms-overflow-style: none;        /* hides scrollbar in IE and Edge */
+  overflow-y: scroll;              /* to keep scroll functionality */
+}
+
+/* For Chrome, Safari, Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
 @layer base {
   html {
     scroll-behavior: smooth;
