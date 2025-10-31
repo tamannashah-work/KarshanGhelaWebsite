@@ -44,7 +44,7 @@ export default function ProductsPage() {
       <section className="py-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl title md:text-5xl font-bold text-gray-900 mb-6">
               Our Premium Products
             </h1>
             <div className="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
@@ -61,7 +61,7 @@ export default function ProductsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-8 pb-4 border-b">
               <Filter className="text-amber-600" size={24} />
-              <h2 className="text-2xl font-bold text-gray-900">Filter by Category</h2>
+              <h2 className="text-2xl title font-bold text-gray-900">Filter by Category</h2>
             </div>
 
             <div className="flex flex-wrap gap-3 mb-12">
@@ -130,7 +130,7 @@ export default function ProductsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl title md:text-4xl font-bold text-gray-900 mb-6">
                   Why Our Products Stand Out
                 </h2>
                 <div className="space-y-4">
@@ -188,7 +188,7 @@ export default function ProductsPage() {
       <section className="py-16 bg-gradient-to-r from-amber-600 to-orange-600">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl title md:text-4xl font-bold mb-6">
               Looking for Something Specific?
             </h2>
             <p className="text-xl text-amber-50 leading-relaxed mb-8">

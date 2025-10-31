@@ -27,7 +27,7 @@ export default function Hero() {
             <div className="inline-block bg-green-500/60 backdrop-blur text-white rounded px-6 py-3 text-sm font-semibold shadow-lg">
               Heritage Since 1920
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-2xl">
+            <h1 className="text-4xl title md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-3xl">
               Authentic Indian <span className="text-amber-400">Spices & Masalas</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto drop-shadow-lg">

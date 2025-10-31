@@ -1,4 +1,4 @@
-import { Heart, Leaf, Shield, TrendingUp, Award, Users, Store, Clock } from 'lucide-react';
+import { Heart, Leaf, Shield, TrendingUp, Award, Users, Store, Clock,Globe } from 'lucide-react';
 import About from '../components/About';
 export default function AboutPage() {
   return (
@@ -8,7 +8,7 @@ export default function AboutPage() {
       <section className=" pb-8 ">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl title md:text-4xl font-bold text-gray-900 mb-4">
               Our Core Values
             </h2>
             <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>

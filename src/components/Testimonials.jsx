@@ -55,7 +55,7 @@ export default function Testimonials() {
     <section id="testimonials" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl title md:text-4xl font-bold text-gray-900 mb-4">
             What Our Customers Say
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>

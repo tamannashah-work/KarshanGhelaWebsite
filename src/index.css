@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {      
+.body {      
     overscroll-behavior-y:none; 
     overscroll-behavior-x: none;  
     /* hides scrollbar */
@@ -11,8 +11,15 @@ body {
 }
 
 /* For Chrome, Safari, Opera */
-body::-webkit-scrollbar {
+.body::-webkit-scrollbar {
   display: none;
+}
+
+.title {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
 }
 
 
@@ -22,10 +29,18 @@ body::-webkit-scrollbar {
   }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-family: "Baskervville", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
   }
 }
-
+.logo
+{
+  margin-top:2vh;
+  width:18vh;
+  height:auto;
+}
 @layer utilities {
   @keyframes fadeIn {
     from {

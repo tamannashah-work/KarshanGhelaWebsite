@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-white   bg-gradient-to-br from-green-100 to-green-200">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl title md:text-4xl title text-gray-900 mb-6">
               Welcome to Karshan Ghela
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -23,11 +23,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <About />
       <OnTheShelf />
       <Products />
       <Testimonials />
-      <Contact title="Get In Touch" />
+      <Contact title="Get In Touch" map={false}  />
     </>
   );
 }

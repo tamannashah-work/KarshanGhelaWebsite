@@ -5,7 +5,7 @@ export default function About() {
     <section id="about" className="pt-5">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl title md:text-4xl  text-gray-900 mb-4">
             Our Story - A Century of Flavours and Tradition
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-2"></div>
@@ -42,7 +42,7 @@ export default function About() {
               <div className="flex gap-4 mb-6">
                 <MapPin className="flex-shrink-0 mt-1" size={32} />
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Visit Our New Store</h3>
+                  <h3 className="text-2xl title md:text-3xl font-bold mb-4">Visit Our New Store</h3>
                   <p className="text-lg leading-relaxed mb-6">
                     As we step into a new chapter with our bigger and better store, our mission remains the same — to fill homes around the world with the warmth, aroma, and soul of true Indian cuisine.
                   </p>

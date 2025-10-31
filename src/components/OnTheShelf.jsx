@@ -60,11 +60,11 @@ export default function OnTheShelf() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-50 via-white to-orange-50">
+    <section className="py-20  bg-gradient-to-br from-amber-100 to-orange-100">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            On The Shelf
+          <h2 className="text-3xl title font-bold md:text-4xl text-gray-900 mb-4">
+            New On The Shelf
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 leading-relaxed">

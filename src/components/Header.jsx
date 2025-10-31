@@ -10,15 +10,15 @@ export default function Header() {
   return (
     <header className="relative w-full shadow-md z-50">
       {/* Orange bar with logo overlay */}
-      <div className="relative bg-green-700 h-12 sm:h-10 flex items-center justify-between px-4 sm:px-8">
+      <div className="relative bg-yellow-600 h-12 sm:h-10 flex items-center justify-between px-4 sm:px-8">
         {/* Logo overlapping the bar */}
         <div className="relative md:pt-12 md:mt-4 z-20">
 
           <Link to="/">
             <img
-              src="images/Karshan-Ghela-Logo-wob-1-150x150.png"
+              src="images/Karshan-Ghela-Logo-wob-300x300.png"
               alt="Karshan Ghela Logo"
-              className="w-20 sm:w-24 h-auto "
+              className="logo"
             />
           </Link>
         </div>
@@ -77,10 +77,10 @@ export default function Header() {
       <nav className="hidden md:block bg-white border-t border-gray-200">
         <div className="flex px-8 py-5 items-center justify-between">
           {/* Title on the left */}
-          <div className="text-xl pl-32 font-bold text-green-700">Karshan Ghela</div>
+          <div className="text-3xl  pl-32 font-bold title text-green-700">Karshan Ghela</div>
 
           {/* Navigation links on the right */}
-          <div className="flex items-center space-x-10">
+          <div className="flex title  text-2xl font-bold items-center space-x-10">
             {[
               { to: "/", label: "Home" },
               { to: "/about", label: "About Us" },
@@ -90,7 +90,7 @@ export default function Header() {
               <Link
                 key={to}
                 to={to}
-                className={`font-medium transition-colors ${
+                className={`font-bold transition-colors ${
                   isActive(to)
                     ? "text-green-700"
                     : "text-gray-800 hover:text-green-700"

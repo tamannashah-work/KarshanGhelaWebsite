@@ -14,11 +14,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                GK
-              </div>
+              <img src="logo.png"
+                className="w-12 h-12flex items-center justify-center text-white font-bold text-xl shadow-lg"/>
               <div>
-                <h3 className="text-white text-xl font-bold"> Karshan Ghela</h3>
+                <h3 className="text-white title text-xl font-bold"> Karshan Ghela</h3>
                 <p className="text-sm text-amber-500">Serving Taste & Flavor Since 1920</p>
               </div>
             </div>
@@ -28,7 +27,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-lg font-semibold mb-4">Contact Info</h4>
+            <h4 className="text-white title text-lg font-semibold mb-4">Contact Info</h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-amber-500 flex-shrink-0 mt-1" />
@@ -52,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-lg font-semibold mb-4">Connect With Us</h4>
+            <h4 className="text-white title text-lg font-bold mb-4">Connect With Us</h4>
             <div className="flex gap-4 mb-6">
               <a
                 href="https://facebook.com"

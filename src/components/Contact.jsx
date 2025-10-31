@@ -85,7 +85,7 @@ export default function Contact(props) {
     <section id="contact" className="pb-20 bg-gradient-to-br from-green-100 to-amber-100">
       <div className="container mx-auto px-4 py-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl title md:text-4xl font-bold text-gray-900 mb-4">
             {props.title}
           </h2>
           <div className="w-24 h-1 bg-green-700 mx-auto mb-6"></div>
@@ -275,7 +275,7 @@ export default function Contact(props) {
             </form>
           </div>
         </div>
-        
+        {props.map && (
             <div className="bg-white p-6 rounded-xl max-w-6xl ">
               <h3 className="font-semibold text-gray-900 mb-3">Location Map</h3>
               <div className="aspect-video bg-white rounded-lg overflow-hidden">
@@ -290,6 +290,7 @@ export default function Contact(props) {
                 ></iframe>
               </div>
             </div>
+        )}
       </div>
     </section>
   );

@@ -6,10 +6,10 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState(productCategories[0]);
 
   return (
-    <section id="products" className="py-20 bg-white">
+    <section id="products" className="py-20   bg-gradient-to-br from-green-100 to-amber-100">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl title md:text-4xl font-bold text-gray-900 mb-4">
             Our Premium Products
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
@@ -38,7 +38,7 @@ export default function Products() {
         <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 md:p-12 mb-16">
           <div className="text-center mb-12">
             <div className="text-6xl mb-4">{selectedCategory.emoji}</div>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h3 className="text-3xl md:text-4xl title font-bold text-gray-900 mb-4">
               {selectedCategory.name}
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
@@ -76,7 +76,7 @@ export default function Products() {
         </div>
 
         <div className="bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 md:p-12 text-center text-white">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 title">
             Looking for Specific Products?
           </h3>
           <p className="text-lg mb-6 text-amber-50">
