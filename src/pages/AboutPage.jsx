@@ -1,58 +1,11 @@
 import { Heart, Leaf, Shield, TrendingUp, Award, Users, Store, Clock } from 'lucide-react';
-
+import About from '../components/About';
 export default function AboutPage() {
   return (
-    <div className="pt-32 pb-16">
-      <section className="py-12 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About Gandhi Karshan Ghela
-            </h1>
-            <div className="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              A century-old legacy of authentic Indian flavors
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="relative">
-              <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-8 shadow-xl">
-                <div className="aspect-square bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center">
-                  <Store size={120} className="text-white" />
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="inline-block bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold">
-                Established 1920
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Our Heritage Story
-              </h2>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                Gandhi Karshan Ghela was founded in 1920 with a simple mission: to bring the authentic
-                flavors of India to every home. What started as a small spice shop in the heart of
-                Navsari has grown into a trusted name synonymous with quality and tradition.
-              </p>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                For over 100 years, we have maintained our commitment to sourcing the finest ingredients,
-                using traditional preparation methods, and delivering products that capture the true
-                essence of Indian cuisine. Our family's dedication to excellence has been passed down
-                through four generations, each adding their expertise while honoring the foundations
-                laid by our ancestors.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-amber-50">
+    <div className=" pt-5 pb-16  bg-gradient-to-br from-green-100 to-amber-100">
+      <About />
+      
+      <section className=" pb-8 ">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -60,7 +13,14 @@ export default function AboutPage() {
             </h2>
             <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           </div>
-
+        
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <p className="text-xl text-amber-800 font-semibold italic">
+              A Heritage of Taste. A Promise of Purity.
+            </p>
+          </div>
+        </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mb-6 mx-auto">
@@ -146,7 +106,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-r from-amber-600 to-orange-600">
+      <section className="py-16 bg-gradient-to-r from-green-700 to-green-800">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">

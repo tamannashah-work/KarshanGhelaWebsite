@@ -12,7 +12,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Welcome to Gandhi Karshan Ghela
+              Welcome to  Karshan Ghela
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               For over a century, we've been serving authentic Indian spices and traditional products
@@ -24,7 +24,8 @@ export default function Home() {
       </div>
       <Products />
       <Testimonials />
-      <Contact />
+      
+      <Contact  title="Get In Touch"/>
     </>
   );
 }

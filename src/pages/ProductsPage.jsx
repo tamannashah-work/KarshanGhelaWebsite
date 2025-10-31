@@ -40,8 +40,8 @@ export default function ProductsPage() {
     : categories.filter(cat => cat.slug === selectedCategory);
 
   return (
-    <div className="pt-32 pb-16">
-      <section className="py-12 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+    <div className="pt-18 pb-16   bg-gradient-to-br from-green-100 to-amber-100">
+      <section className="py-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -125,7 +125,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-amber-50">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">

@@ -18,7 +18,7 @@ export default function Footer() {
                 GK
               </div>
               <div>
-                <h3 className="text-white text-xl font-bold">Gandhi Karshan Ghela</h3>
+                <h3 className="text-white text-xl font-bold"> Karshan Ghela</h3>
                 <p className="text-sm text-amber-500">Serving Taste & Flavor Since 1920</p>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-6 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Gandhi Karshan Ghela. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()}  Karshan Ghela. All rights reserved.</p>
         </div>
       </div>
     </footer>

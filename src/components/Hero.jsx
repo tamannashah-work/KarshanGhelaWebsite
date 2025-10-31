@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="container mx-auto p-5 m-2">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fadeIn">
-            <div className="inline-block bg-amber-500/60 backdrop-blur text-white rounded px-6 py-3 text-sm font-semibold shadow-lg">
+            <div className="inline-block bg-green-500/60 backdrop-blur text-white rounded px-6 py-3 text-sm font-semibold shadow-lg">
               Heritage Since 1920
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-2xl">
@@ -37,7 +37,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 justify-center">
               <button
                 onClick={() => scrollToSection('products')}
-                className="bg-amber-600 hover:bg-amber-700 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-2xl"
+                className="bg-green-700 hover:bg-green-800 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-2xl"
               >
                 Explore Products
               </button>
@@ -51,28 +51,28 @@ export default function Hero() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
               <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl text-center border border-white/20">
-                <div className="w-12 h-12 bg-amber-500/90 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-green-500/90 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Store className="text-white" size={24} />
                 </div>
                 <h3 className="text-3xl font-bold text-white">100+</h3>
                 <p className="text-white/90 text-sm font-medium">Years Legacy</p>
               </div>
               <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl text-center border border-white/20">
-                <div className="w-12 h-12 bg-amber-500/90 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-green-500/90 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Sparkles className="text-white" size={24} />
                 </div>
                 <h3 className="text-3xl font-bold text-white">500+</h3>
                 <p className="text-white/90 text-sm font-medium">Products</p>
               </div>
               <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl text-center border border-white/20">
-                <div className="w-12 h-12 bg-amber-500/90 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-green-500/90 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Users className="text-white" size={24} />
                 </div>
                 <h3 className="text-3xl font-bold text-white">10K+</h3>
                 <p className="text-white/90 text-sm font-medium">Happy Customers</p>
               </div>
               <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl text-center border border-white/20">
-                <div className="w-12 h-12 bg-amber-500/90 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-green-500/90 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Award className="text-white" size={24} />
                 </div>
                 <h3 className="text-3xl font-bold text-white">100%</h3>

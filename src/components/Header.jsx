@@ -10,9 +10,10 @@ export default function Header() {
   return (
     <header className="relative w-full shadow-md z-50">
       {/* Orange bar with logo overlay */}
-      <div className="relative bg-amber-600 h-12 sm:h-10 flex items-center justify-between px-4 sm:px-8">
+      <div className="relative bg-green-700 h-12 sm:h-10 flex items-center justify-between px-4 sm:px-8">
         {/* Logo overlapping the bar */}
         <div className="relative md:pt-12 md:mt-4 z-20">
+
           <Link to="/">
             <img
               src="images/Karshan-Ghela-Logo-wob-1-150x150.png"
@@ -47,8 +48,11 @@ export default function Header() {
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:block bg-white border-t border-gray-200">
-        <div className="flex justify-end items-center px-8 py-5 space-x-10">
+      {/* <nav className="hidden md:block bg-white border-t border-gray-200">
+        
+        <div className="flex px-8 py-5 space-x-10 items-center ">
+        <div className="flex justify-around">Karshan Gehla</div>
+        <div className="flex justify-end items-center space-x-10">
           {[
             { to: "/", label: "Home" },
             { to: "/about", label: "About Us" },
@@ -68,8 +72,36 @@ export default function Header() {
             </Link>
           ))}
         </div>
-      </nav>
+        </div>
+      </nav> */}
+      <nav className="hidden md:block bg-white border-t border-gray-200">
+        <div className="flex px-8 py-5 items-center justify-between">
+          {/* Title on the left */}
+          <div className="text-xl pl-32 font-bold text-green-700">Karshan Ghela</div>
 
+          {/* Navigation links on the right */}
+          <div className="flex items-center space-x-10">
+            {[
+              { to: "/", label: "Home" },
+              { to: "/about", label: "About Us" },
+              { to: "/products", label: "Products" },
+              { to: "/contact", label: "Contact" },
+            ].map(({ to, label }) => (
+              <Link
+                key={to}
+                to={to}
+                className={`font-medium transition-colors ${
+                  isActive(to)
+                    ? "text-green-700"
+                    : "text-gray-800 hover:text-green-700"
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </nav>
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
@@ -86,8 +118,8 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className={`font-medium transition-colors ${
                   isActive(to)
-                    ? "text-amber-600"
-                    : "text-gray-800 hover:text-amber-600"
+                    ? "text-green-700"
+                    : "text-gray-800 hover:text-green-700"
                 }`}
               >
                 {label}

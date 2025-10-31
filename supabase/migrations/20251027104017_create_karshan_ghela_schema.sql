@@ -1,5 +1,5 @@
 /*
-  # Gandhi Karshan Ghela Website Schema
+  #  Karshan Ghela Website Schema
 
   1. New Tables
     - `categories`

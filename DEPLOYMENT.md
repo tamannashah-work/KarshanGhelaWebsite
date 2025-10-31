@@ -1,7 +1,7 @@
-# Gandhi Karshan Ghela - Deployment Guide
+#  Karshan Ghela - Deployment Guide
 
 ## Overview
-This is a modern, production-ready website for Gandhi Karshan Ghela, a heritage spice shop established in 1920. Built with React, Tailwind CSS, and Supabase for data management.
+This is a modern, production-ready website for  Karshan Ghela, a heritage spice shop established in 1920. Built with React, Tailwind CSS, and Supabase for data management.
 
 ## Features
 - ✅ Responsive design (mobile, tablet, desktop)
@@ -139,7 +139,7 @@ The site is optimized for:
 - Traditional Indian products
 - Authentic spices Gujarat
 - Heritage spice shop
-- Gandhi Karshan Ghela
+-  Karshan Ghela
 
 ## Future Enhancements
 The codebase is structured to easily add:
@@ -154,4 +154,4 @@ The codebase is structured to easily add:
 For technical support or questions, contact your development team.
 
 ## License
-Proprietary - Gandhi Karshan Ghela
+Proprietary -  Karshan Ghela
