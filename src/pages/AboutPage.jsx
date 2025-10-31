@@ -28,9 +28,8 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">100% Natural</h3>
               <p className="text-gray-600 leading-relaxed text-center">
-                We believe in the purity of nature. All our products are made from natural ingredients
-                without any artificial colors, preservatives, or additives. What you get is pure,
-                authentic, and wholesome.
+                We use only the finest natural ingredients with no artificial colors, preservatives, or additives.
+                Pure and authentic, just as nature intended.
               </p>
             </div>
 
@@ -40,21 +39,18 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Quality Assured</h3>
               <p className="text-gray-600 leading-relaxed text-center">
-                Every product undergoes rigorous quality checks at multiple stages. Our reputation
-                for excellence spans over a century, built on the trust of thousands of satisfied
-                customers across generations.
+                Every product undergoes rigorous quality checks to ensure you receive only the best.
+                Our reputation for excellence spans generations.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <Heart className="text-white" size={32} />
+                <Globe className="text-white" size={32} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Traditional Methods</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Global Reach</h3>
               <p className="text-gray-600 leading-relaxed text-center">
-                We honor time-tested traditional preparation methods passed down through generations.
-                While we embrace modern hygiene standards, our recipes and techniques remain authentic
-                to their roots.
+                From Navsari to the world — serving families across India, USA, UK, Canada, and beyond with authentic Indian flavours.
               </p>
             </div>
           </div>
