@@ -94,6 +94,18 @@ export default function Contact(props) {
           </p>
         </div>
 
+        {props.showStoreFront && (
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="/images/Karsanghela-Shop-front.png"
+                alt="Karshan Ghela Store Front"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        )}
+
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-10">
           <div className="space-y-8">
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">

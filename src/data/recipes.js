@@ -1,0 +1,20 @@
+export const recipes = [
+  { src: '/images/recipe/Recipe_Card_A.jpg', alt: 'Recipe Card A' },
+  { src: '/images/recipe/Recipe_Card_B.jpg', alt: 'Recipe Card B' },
+  { src: '/images/recipe/Recipe_Card_C.jpg', alt: 'Recipe Card C' },
+  { src: '/images/recipe/Recipe_Card_D.jpg', alt: 'Recipe Card D' },
+  { src: '/images/recipe/all_in_one_masala.jpg', alt: 'All in One Masala Recipe' },
+  { src: '/images/recipe/garlic_bread_masala.jpg', alt: 'Garlic Bread Masala Recipe' },
+  { src: '/images/recipe/green_chicken_masala.jpg', alt: 'Green Chicken Masala Recipe' },
+  { src: '/images/recipe/maggi_noodles_masala.jpg', alt: 'Maggi Noodles Masala Recipe' },
+  { src: '/images/recipe/peri_peri_seasoning_masala.jpg', alt: 'Peri Peri Seasoning Masala Recipe' },
+  { src: '/images/recipe/dal_ghost_masala.jpg', alt: 'Dal Ghost Masala Recipe' },
+  { src: '/images/recipe/dum_aloo_masala.jpg', alt: 'Dum Aloo Masala Recipe' },
+  { src: '/images/recipe/edd_ghotala.jpg', alt: 'Egg Ghotala Recipe' },
+  { src: '/images/recipe/malvani_chicken_masala.jpg', alt: 'Malvani Chicken Masala Recipe' },
+  { src: '/images/recipe/meal_masala.jpg', alt: 'Meal Masala Recipe' },
+  { src: '/images/recipe/mughlai_mutton_masala.jpg', alt: 'Mughlai Mutton Masala Recipe' },
+  { src: '/images/recipe/nawabi_chicken_masala.jpg', alt: 'Nawabi Chicken Masala Recipe' },
+  { src: '/images/recipe/pizza_gravy_masala.jpg', alt: 'Pizza Gravy Masala Recipe' },
+  { src: '/images/recipe/punjabi_gravy_masala.jpg', alt: 'Punjabi Gravy Masala Recipe' }
+];

@@ -1,46 +1,33 @@
-import { useState, useEffect } from 'react';
-import { Filter, Package } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { useState, useMemo } from 'react';
+import { Filter, Search } from 'lucide-react';
+import { productCategories } from '../data/products';
+import Lightbox from '../components/Lightbox';
 
 export default function ProductsPage() {
-  const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState('');
+  const [category, setCategory] = useState('all');
+  const [lightbox, setLightbox] = useState(null);
 
-  useEffect(() => {
-    fetchCategories();
-  }, []);
+  const allProducts = useMemo(() =>
+    productCategories.flatMap(cat =>
+      cat.items.map(item => ({ ...item, category: cat.name, categoryId: cat.id, categoryEmoji: cat.emoji }))
+    ),
+  []);
 
-  const fetchCategories = async () => {
-    setLoading(true);
-    const { data, error } = await supabase
-      .from('categories')
-      .select('*')
-      .order('display_order');
+  const categories = useMemo(() =>
+    ['all', ...productCategories.map(c => c.name)],
+  []);
 
-    if (!error && data) {
-      setCategories(data);
-    }
-    setLoading(false);
-  };
-
-  const productIcons = {
-    'masalas-spices': '🌶️',
-    'papadums': '🥙',
-    'dry-fruits': '🥜',
-    'pickles': '🥒',
-    'fruit-powders': '🍊',
-    'instant-flour': '🌾',
-    'chikki': '🍬',
-    'khakhra': '🍪',
-  };
-
-  const filteredCategories = selectedCategory === 'all'
-    ? categories
-    : categories.filter(cat => cat.slug === selectedCategory);
+  const filtered = useMemo(() => {
+    return allProducts.filter(p => {
+      const matchName = p.name.toLowerCase().includes(query.toLowerCase());
+      const matchCat = category === 'all' || p.category === category;
+      return matchName && matchCat;
+    });
+  }, [allProducts, query, category]);
 
   return (
-    <div className="pt-18 pb-16   bg-gradient-to-br from-green-100 to-amber-100">
+    <div className="pt-18 pb-16 bg-gradient-to-br from-green-100 to-amber-100">
       <section className="py-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -56,131 +43,82 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-3 mb-8 pb-4 border-b">
-              <Filter className="text-amber-600" size={24} />
-              <h2 className="text-2xl title font-bold text-gray-900">Filter by Category</h2>
+            <div className="flex flex-col md:flex-row justify-between mb-8 gap-4">
+              <div className="relative flex-1 md:max-w-md">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                <input
+                  value={query}
+                  onChange={e => setQuery(e.target.value)}
+                  placeholder="Search products by name..."
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                />
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-3 mb-12">
-              <button
-                onClick={() => setSelectedCategory('all')}
-                className={`px-6 py-2 rounded-full font-medium transition-all ${
-                  selectedCategory === 'all'
-                    ? 'bg-amber-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                All Products
-              </button>
-              {categories.map((category) => (
+            <div className="flex items-center gap-3 mb-6 pb-4 border-b">
+              <Filter className="text-amber-600" size={24} />
+              <h2 className="text-xl title font-bold text-gray-900">Filter by Category</h2>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+              {categories.map(c => (
                 <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.slug)}
-                  className={`px-6 py-2 rounded-full font-medium transition-all ${
-                    selectedCategory === category.slug
+                  key={c}
+                  onClick={() => setCategory(c)}
+                  className={`px-5 py-2 rounded-full font-medium transition-all ${
+                    category === c
                       ? 'bg-amber-600 text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
-                  {category.name}
+                  {c}
                 </button>
               ))}
             </div>
 
-            {loading ? (
+            {filtered.length === 0 ? (
               <div className="text-center py-12">
-                <div className="w-12 h-12 border-4 border-amber-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
-                <p className="text-gray-600 mt-4">Loading products...</p>
+                <p className="text-gray-600 text-lg">No products found matching your search.</p>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredCategories.map((category) => (
-                  <div
-                    key={category.id}
-                    className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-8 shadow-md hover:shadow-xl transition-all transform hover:scale-105"
-                  >
-                    <div className="text-center">
-                      <div className="text-6xl mb-4">
-                        {productIcons[category.slug] || '🌟'}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {filtered.map((p, i) => (
+                  <div key={i} className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-xl transition-all group">
+                    {p.image ? (
+                      <div className="relative overflow-hidden rounded-t-lg">
+                        <img
+                          src={p.image}
+                          alt={p.name}
+                          className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        {p.recipe && (
+                          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button
+                              onClick={() => setLightbox(p.recipe)}
+                              className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-semibold text-sm"
+                            >
+                              View Recipe
+                            </button>
+                          </div>
+                        )}
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                        {category.name}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed mb-6">
-                        {category.description}
-                      </p>
-                      <div className="flex items-center justify-center gap-2 text-amber-600 font-medium">
-                        <Package size={20} />
-                        <span>Premium Quality</span>
+                    ) : (
+                      <div className="h-40 bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg flex flex-col items-center justify-center text-gray-400">
+                        <div className="text-4xl mb-2">{p.categoryEmoji || '📦'}</div>
+                        <span className="text-sm">No Image</span>
                       </div>
+                    )}
+                    <div className="p-4">
+                      <h3 className="font-semibold text-gray-900 mb-1 line-clamp-2">{p.name}</h3>
+                      <p className="text-sm text-amber-600 font-medium">{p.category}</p>
                     </div>
                   </div>
                 ))}
               </div>
             )}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl title md:text-4xl font-bold text-gray-900 mb-6">
-                  Why Our Products Stand Out
-                </h2>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white font-bold">✓</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Premium Quality</h3>
-                      <p className="text-gray-600">Hand-selected ingredients sourced from the best farms across India</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white font-bold">✓</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Traditional Methods</h3>
-                      <p className="text-gray-600">Prepared using century-old recipes and techniques</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white font-bold">✓</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">No Additives</h3>
-                      <p className="text-gray-600">100% natural with no artificial colors or preservatives</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white font-bold">✓</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Fresh & Aromatic</h3>
-                      <p className="text-gray-600">Ground and packaged to retain maximum freshness and flavor</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="bg-white rounded-2xl p-8 shadow-xl">
-                  <div className="aspect-square bg-gradient-to-br from-amber-200 to-orange-300 rounded-xl flex items-center justify-center">
-                    <Package size={120} className="text-amber-600" />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -211,6 +149,8 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
+      {lightbox && <Lightbox src={lightbox} alt="Recipe" onClose={() => setLightbox(null)} />}
     </div>
   );
 }
