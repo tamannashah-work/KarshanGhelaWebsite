@@ -1,5 +1,5 @@
 import Hero from '../components/Hero';
-import About from '../components/About';
+import ProductCarousel from '../components/ProductCarousel';
 import OnTheShelf from '../components/OnTheShelf';
 import Products from '../components/Products';
 import Testimonials from '../components/Testimonials';
@@ -24,6 +24,7 @@ export default function Home() {
         </div>
       </div>
       <OnTheShelf />
+      <ProductCarousel />
       <Products />
       <Testimonials />
       <Contact title="Get In Touch" map={false}  />
