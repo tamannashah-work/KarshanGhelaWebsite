@@ -41,12 +41,17 @@ export default function ProductsPage() {
             </p>
           </div>
         </div>
-      </section>
-
-      <section className="py-12 bg-white">
+        <div className="w-24 h-1 bg-amber-600 mx-auto m-8"></div>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between mb-8 gap-4">
+           <div className="flex items-center justify-between gap-3 mb-6 pb-4 border-b">
+              {/* Filter Label on the Left */}
+              <h2 className="flex items-center gap-2 text-xl font-bold text-gray-900">
+                <Filter className="text-amber-600" size={24} />
+                Filter by Category
+              </h2>
+
+              {/* Search Bar on the Right */}
               <div className="relative flex-1 md:max-w-md">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
                 <input
@@ -58,11 +63,6 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 mb-6 pb-4 border-b">
-              <Filter className="text-amber-600" size={24} />
-              <h2 className="text-xl title font-bold text-gray-900">Filter by Category</h2>
-            </div>
-
             <div className="flex flex-wrap gap-2 mb-8">
               {categories.map(c => (
                 <button
@@ -71,7 +71,7 @@ export default function ProductsPage() {
                   className={`px-5 py-2 rounded-full font-medium transition-all ${
                     category === c
                       ? 'bg-amber-600 text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      : 'bg-white text-gray-700 hover:bg-amber-100'
                   }`}
                 >
                   {c}

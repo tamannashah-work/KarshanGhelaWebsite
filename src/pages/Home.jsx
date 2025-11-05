@@ -24,7 +24,6 @@ export default function Home() {
         </div>
       </div>
       <OnTheShelf />
-      <ProductCarousel />
       <Products />
       <Testimonials />
       <Contact title="Get In Touch" map={false}  />

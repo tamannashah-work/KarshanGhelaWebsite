@@ -42,8 +42,7 @@
 // }
 import React, { useEffect, useState } from "react";
 const packagingImages = [
-  "./images/packaging/",
-  "/images/packaging/black_mustaed_seeds.png",
+  "/images/packaging/black_mustard_seeds.png",
   "/images/packaging/chat_masala.png",
   "/images/packaging/chia_seeds.png",
   "/images/packaging/chicken_gravy_masala.png",
@@ -78,14 +77,14 @@ export default function VerticalProductCarousel() {
   }, []);
 
   return (
-    <section className="bg-white py-12 flex flex-col items-center overflow-hidden">
-      <div className="relative w-full max-w-md h-96 overflow-hidden flex justify-center items-center">
+    <section className="bg-transparent py-6 flex flex-col items-center overflow-hidden">
+      <div className="relative w-full max-w-md h-80 overflow-hidden flex justify-center items-center">
         {packagingImages.map((src, index) => (
           <img
             key={index}
             src={src}
             alt={`Packaging ${index}`}
-            className={`absolute w-auto h-80 object-contain transition-all duration-700 ease-in-out ${
+            className={`absolute w-auto h-80 object-contain transition-all duration-700  ease-in-out ${
               index === current
                 ? "opacity-100 translate-x-0"
                 : direction === "right"

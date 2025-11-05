@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { productCategories } from '../data/products';
-
+import ProductCarousel from './ProductCarousel';
 export default function Products() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -122,6 +122,9 @@ export default function Products() {
           <h3 className="text-2xl md:text-3xl font-bold mb-4 title">
             Explore Our Complete Product Range
           </h3>
+          
+          
+          <ProductCarousel />
           <p className="text-lg mb-6 text-amber-50">
             Visit our products page to browse our complete range of 500+ authentic products
           </p>
