@@ -15,10 +15,25 @@ export default function Hero() {
         loop
         muted
         playsInline
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
+        poster="/images/video-poster.png"
+        onError={(e) => {
+          console.error('Video failed to load, showing fallback', e);
+          e.target.style.display = 'none';
+          const fallback = document.getElementById('video-fallback');
+          if (fallback) fallback.style.display = 'block';
+        }}
       >
+        {/* WebM format (better compression) */}
+        <source src="/videos/home.webm" type="video/webm" />
+        {/* Fallback to MP4 for browsers that don't support WebM */}
         <source src="/videos/home.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
+      <div id="video-fallback" className="hidden absolute inset-0 w-full h-full bg-cover bg-center" style={{
+        backgroundImage: 'url(/images/video-poster.png)'
+      }}></div>
 
       <div className="absolute inset-0 bg-black/40"></div>
       <div className="relative z-10 h-full flex items-center justify-center">
