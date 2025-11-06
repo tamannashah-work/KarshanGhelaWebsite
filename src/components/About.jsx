@@ -3,7 +3,7 @@ import { Heart, Leaf, Shield, TrendingUp, MapPin, Globe } from 'lucide-react';
 export default function About() {
   return (
     <section id="about" className="pt-5">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-4">
           <h2 className="text-3xl title md:text-4xl  text-gray-900 mb-4">
             Our Story - A Century of Flavours and Tradition
@@ -13,9 +13,10 @@ export default function About() {
             A legacy of flavor and tradition spanning over a century
           </p>
         </div>
-        <div className="flex max-w-5xl mx-auto mb-16">
+        <div className="flex mx-auto mb-16">
+          <div>
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto mb-16">
+            <div className="max-w-4xl mx-auto mb-5">
               <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src="/images/Karsanghela-Shop-front.png"
@@ -24,22 +25,34 @@ export default function About() {
                 />
               </div>
             </div>
+            </div>
+            <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto mb-5">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src="/images/Karshan-Ghela-Logo-wob-1-1536x1241.png"
+                  alt="Karshan Ghela Store Front"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
           </div>
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 md:p-12 shadow-lg">
-            <div className="space-y-6 text-gray-700 leading-relaxed">
-              <p className="text-lg">
+          </div>
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-5 md:p-6 shadow-lg">
+            <div className="space-y-8 text-gray-700 leading-relaxed">
+              <p className="text-md">
                 The story of <span className="font-bold text-amber-700"> Karshan Ghela</span> began in <span className="font-bold">1920</span>, in the heart of Navsari, with a simple dream — to bring authentic Indian flavours to every kitchen. What started as a small spice shop by our forefathers soon became a name synonymous with purity, taste, and tradition.
               </p>
 
-              <p className="text-lg">
+              <p className="text-md">
                 In those early days, each spice was hand-ground, blended with care, and sold with a promise — <span className="font-semibold italic">"Only the best for your family."</span> That promise has guided us for over 100 years, passing from one generation to the next, just like our secret recipes and unwavering commitment to quality.
               </p>
 
-              <p className="text-lg">
+              <p className="text-md">
                 Today,  Karshan Ghela continues that proud legacy, offering a rich range of <span className="font-semibold">Veg. & Non-Veg. Masalas, Papadums, Dry Fruits, Pickles, Fruit Powders, Instant Flours, Chikki, Khakhra,</span> and many more kitchen essentials — all crafted with the same love and authenticity that defined our beginnings.
               </p>
 
-              <p className="text-lg">
+              <p className="text-md">
                 From our humble shop in Navsari, our flavours have travelled far and wide, reaching families across <span className="font-semibold">India, the United States, the United Kingdom, Canada,</span> and beyond.
               </p>
             </div>

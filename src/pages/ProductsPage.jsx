@@ -7,7 +7,8 @@ import Lightbox from '../components/Lightbox';
 export default function ProductsPage() {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('all');
-  const [lightbox, setLightbox] = useState(null);
+  const [lightboxImage, setLightboxImage] = useState(null);
+  const [lightboxAlt, setLightboxAlt] = useState('');
   const [allProducts, setAllProducts] = useState([]);
   const [categories, setCategories] = useState(['all']);
   const [loading, setLoading] = useState(true);
@@ -24,10 +25,12 @@ export default function ProductsPage() {
         getAllCategories()
       ]);
 
+      console.log('Products data:', productsData); // Debug log
+
       setAllProducts(productsData.map(p => ({
         ...p,
         image: p.image_url,
-        recipe: p.recipe_url,
+        recipe: p.recipe_url, // This will be undefined if recipe_url doesn't exist
         categoryName: p.category?.name || 'Uncategorized',
         categoryEmoji: p.category?.emoji || '📦'
       })));
@@ -132,7 +135,17 @@ export default function ProductsPage() {
                         {p.recipe && (
                           <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                             <button
-                              onClick={() => setLightbox(p.recipe)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                console.log('Recipe URL:', p.recipe_url); // Debug log
+                                console.log('Mapped recipe:', p.recipe);   // Debug log
+                                if (p.recipe) {
+                                  setLightboxImage(p.recipe);
+                                  setLightboxAlt(`Recipe for ${p.name}`);
+                                } else {
+                                  console.warn('No recipe URL found for product:', p.name);
+                                }
+                              }}
                               className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-semibold text-sm"
                             >
                               View Recipe
@@ -185,7 +198,16 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {lightbox.image && <Lightbox src={lightbox.image} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
+      {lightboxImage && (
+        <Lightbox 
+          src={lightboxImage} 
+          alt={lightboxAlt} 
+          onClose={() => {
+            setLightboxImage(null);
+            setLightboxAlt('');
+          }} 
+        />
+      )}
     </div>
   );
 }

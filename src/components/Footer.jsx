@@ -54,7 +54,7 @@ export default function Footer() {
             <h4 className="text-white title text-lg font-bold mb-4">Connect With Us</h4>
             <div className="flex gap-4 mb-6">
               <a
-                href="https://facebook.com"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors"
@@ -62,7 +62,7 @@ export default function Footer() {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/karshan_ghela"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors"

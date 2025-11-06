@@ -61,6 +61,7 @@ const packagingImages = [
   "/images/packaging/mustard_seeds.png",
   "/images/packaging/red_chilly_powder.png",
   "/images/packaging/super_garam_masala.jpg",
+  "/images/pickles.jpg",
   "/images/packaging/tumeric_powder.png",
 ];
 
