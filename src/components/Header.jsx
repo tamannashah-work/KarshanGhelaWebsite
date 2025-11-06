@@ -12,13 +12,12 @@ export default function Header() {
       {/* Orange bar with logo overlay */}
       <div className="relative bg-yellow-600 h-12 sm:h-10 flex items-center justify-between px-4 sm:px-8">
         {/* Logo overlapping the bar */}
-        <div className="relative md:pt-12 md:mt-4 z-20">
-
-          <Link to="/">
+        <div className="relative z-20 -ml-2 sm:-ml-3 md:-ml-4 pt-4 sm:pt-5 md:pt-16 md:mt-5">
+          <Link to="/" className="block">
             <img
               src="images/Karshan-Ghela-Logo-wob-300x300.png"
               alt="Karshan Ghela Logo"
-              className="logo"
+              className="h-[3.5rem] w-auto sm:h-[4.25rem] md:h-[6rem] lg:h-[7rem] transition-all duration-300"
             />
           </Link>
         </div>

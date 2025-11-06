@@ -2,29 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 body,
 #root {
-  min-height: 100%;
+  min-height: 100vh;
+  width: 100%;
   margin: 0;
+  padding: 0;
   background: linear-gradient(to bottom right, #fef3c7, #d1fae5);
   overflow-x: hidden;
+  position: relative;
 }
-.body {      
-    overscroll-behavior-y:none; 
-    overscroll-behavior-x: none;  
-    /* hides scrollbar
-  -ms-overflow-style: none;        /* hides scrollbar in IE and Edge */
-  overflow-y: scroll;  
-              /* to keep scroll functionality */
+
+/* Prevent overscroll bounce effect */
+html, body {
+  overscroll-behavior: none;
 }
+
+/* Ensure no horizontal scrollbar */
+html, body, #root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix for iOS viewport units */
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
+}
+
 /* Hide scrollbar for WebKit browsers */
 body::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for Firefox */
-body {
+html {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }

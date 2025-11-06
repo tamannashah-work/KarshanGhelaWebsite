@@ -36,9 +36,9 @@ export default function Hero() {
       }}></div>
 
       <div className="absolute inset-0 bg-black/40"></div>
-      <div className="relative z-10 h-full flex items-center justify-center">
-        <div className="container mx-auto p-5 m-2">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fadeIn">
+      <div className="relative z-10 h-full flex items-center justify-center pt-16 md:pt-24">
+        <div className="w-full px-4 sm:px-6 py-2">
+          <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8 animate-fadeIn px-[calc(100vw-100%)]">
             <div className="inline-block bg-green-500/60 backdrop-blur text-white rounded px-6 py-3 text-sm font-semibold shadow-lg">
               Heritage Since 1920
             </div>
