@@ -62,26 +62,28 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="relative bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 md:p-12 shadow-xl">
-            <div className="absolute top-8 left-8 text-amber-300 opacity-50">
+        <div className="max-w-4xl mx-auto px-2 sm:px-4">
+          <div className="relative bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 sm:p-8 md:p-12 shadow-xl">
+            <div className="hidden sm:block absolute top-8 left-8 text-amber-300 opacity-50">
               <Quote size={48} />
             </div>
 
             <button
               onClick={prevSlide}
               onMouseEnter={() => setIsAutoPlaying(false)}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-amber-600 hover:text-white text-gray-700 p-3 rounded-full shadow-lg transition-all z-10"
+              className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-amber-600 hover:text-white text-gray-700 p-2 sm:p-3 rounded-full shadow-lg transition-all z-10"
+              aria-label="Previous testimonial"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={20} className="w-5 h-5" />
             </button>
 
             <button
               onClick={nextSlide}
               onMouseEnter={() => setIsAutoPlaying(false)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-amber-600 hover:text-white text-gray-700 p-3 rounded-full shadow-lg transition-all z-10"
+              className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-amber-600 hover:text-white text-gray-700 p-2 sm:p-3 rounded-full shadow-lg transition-all z-10"
+              aria-label="Next testimonial"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={20} className="w-5 h-5" />
             </button>
 
             <div className="text-center relative z-10">
@@ -91,7 +93,7 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8 italic">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed mb-6 sm:mb-8 italic px-2 sm:px-4 md:px-8">
                 "{currentTestimonial.content}"
               </p>
 

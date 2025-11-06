@@ -60,20 +60,20 @@ export default function OnTheShelf() {
   };
 
   return (
-    <section className="py-20  bg-gradient-to-br from-amber-100 to-orange-100">
+    <section className="py-12 sm:py-20 bg-gradient-to-br from-amber-100 to-orange-100">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl title font-bold md:text-4xl text-gray-900 mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl title font-bold md:text-4xl text-gray-900 mb-3 sm:mb-4">
             New On The Shelf
           </h2>
-          <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <div className="w-16 sm:w-24 h-1 bg-amber-600 mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
             Discover our most popular and bestselling products
           </p>
         </div>
 
-        <div className="relative mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="relative mb-8 sm:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {getVisibleProducts().map((product, idx) => (
               <div
                 key={idx}
@@ -81,11 +81,13 @@ export default function OnTheShelf() {
                   idx === 1 ? 'md:scale-105 md:z-10' : ''
                 }`}
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+                <div className="relative w-full h-48 sm:h-56 md:h-64 overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
                   <div className="text-right">
                     <span className="inline-block bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
@@ -131,27 +133,34 @@ export default function OnTheShelf() {
             ))}
           </div>
         </div>
-        <div className='flex gap-3'>        
-        <div>
-          <img src="/images/masalas.png" alt="On The Shelf" className=" m-auto h-auto rounded-2xl shadow-xl" />
-        </div>
-        <div className=
-        "mx-auto bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-6 text-center text-white shadow-xl">
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="md:w-1/2 flex items-center justify-center">
+            <div className="w-full h-full flex items-center justify-center bg-white rounded-2xl shadow-xl p-4">
+              <img 
+                src="/images/masalas.png" 
+                alt="On The Shelf" 
+                className="max-w-full max-h-[300px] w-auto h-auto object-contain" 
+                style={{ maxHeight: 'min(300px, 80vh)' }}
+              />
+            </div>
+          </div>
+          <div className="md:w-1/2 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-6 text-center text-white shadow-xl">
           <div className="mb-4">
             <Download size={48} className="mx-auto text-amber-100" />
           </div>
-          {/* <h3 className="text-2xl font-bold mb-3">Download Our Catalogue</h3> */}
           <p className="text-amber-50 mb-6 leading-relaxed">
             Get a comprehensive look at our complete range of 500+ authentic products
           </p>
-          <a
-            href="/Karshan-Ghela-New-Brochure-2022-1.pdf"
-            download
-            className="inline-flex items-center gap-2 bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all"
-          >
-            <Download size={20} />
-            Download PDF Catalogue
-          </a>
+          <div className="mt-8 sm:mt-12 text-center px-4">
+            <a
+              href="/catalogue.pdf"
+              download
+              className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white hover:bg-gray-100 text-amber-700 border border-amber-600 px-4 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto"
+            >
+              <Download size={18} className="flex-shrink-0" />
+              <span>Download Full Catalogue</span>
+            </a>
+          </div>
         </div>
         </div>
 

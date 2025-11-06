@@ -69,22 +69,27 @@ export default function ProductsPage() {
         <div className="w-24 h-1 bg-amber-600 mx-auto m-8"></div>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-           <div className="flex items-center justify-between gap-3 mb-6 pb-4 border-b">
-              {/* Filter Label on the Left */}
-              <h2 className="flex items-center gap-2 text-xl font-bold text-gray-900">
-                <Filter className="text-amber-600" size={24} />
-                Filter by Category
-              </h2>
+            {/* Stack on mobile, side by side on md and up */}
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6 pb-4 border-b">
+              {/* Filter Label - Full width on mobile, auto width on md+ */}
+              <div className="w-full md:w-auto">
+                <h2 className="flex items-center gap-2 text-xl font-bold text-gray-900">
+                  <Filter className="text-amber-600" size={24} />
+                  Filter by Category
+                </h2>
+              </div>
 
-              {/* Search Bar on the Right */}
-              <div className="relative flex-1 md:max-w-md">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-                <input
-                  value={query}
-                  onChange={e => setQuery(e.target.value)}
-                  placeholder="Search products by name..."
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                />
+              {/* Search Bar - Full width on mobile, takes available space on md+ */}
+              <div className="w-full md:max-w-md">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                  <input
+                    value={query}
+                    onChange={e => setQuery(e.target.value)}
+                    placeholder="Search products by name..."
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  />
+                </div>
               </div>
             </div>
 
