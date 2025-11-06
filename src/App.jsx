@@ -9,8 +9,6 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <Router>
-      <div className="body">
-      <div className="app min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
           <Routes>
@@ -21,8 +19,6 @@ function App() {
           </Routes>
         </main>
         <Footer />
-      </div>
-      </div>
     </Router>
   );
 }

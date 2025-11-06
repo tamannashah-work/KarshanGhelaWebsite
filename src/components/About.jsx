@@ -13,7 +13,18 @@ export default function About() {
             A legacy of flavor and tradition spanning over a century
           </p>
         </div>
-        <div className="max-w-5xl mx-auto mb-16">
+        <div className="flex max-w-5xl mx-auto mb-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto mb-16">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src="/images/Karsanghela-Shop-front.png"
+                  alt="Karshan Ghela Store Front"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
           <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 md:p-12 shadow-lg">
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <p className="text-lg">

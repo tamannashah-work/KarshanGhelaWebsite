@@ -5,20 +5,6 @@ export default function AboutPage() {
     <div className=" pt-5 pb-16  bg-gradient-to-br from-green-100 to-amber-100">
       <About />
 
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
-              <img
-                src="/images/Karsanghela-Shop-front.png"
-                alt="Karshan Ghela Store Front"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className=" pb-8 ">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">

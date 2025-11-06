@@ -131,12 +131,16 @@ export default function OnTheShelf() {
             ))}
           </div>
         </div>
-
-        <div className="max-w-2xl mx-auto bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 text-center text-white shadow-xl">
+        <div className='flex gap-3'>        
+        <div>
+          <img src="/images/masalas.png" alt="On The Shelf" className=" m-auto h-auto rounded-2xl shadow-xl" />
+        </div>
+        <div className=
+        "mx-auto bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-6 text-center text-white shadow-xl">
           <div className="mb-4">
             <Download size={48} className="mx-auto text-amber-100" />
           </div>
-          <h3 className="text-2xl font-bold mb-3">Download Our Catalogue</h3>
+          {/* <h3 className="text-2xl font-bold mb-3">Download Our Catalogue</h3> */}
           <p className="text-amber-50 mb-6 leading-relaxed">
             Get a comprehensive look at our complete range of 500+ authentic products
           </p>
@@ -149,6 +153,8 @@ export default function OnTheShelf() {
             Download PDF Catalogue
           </a>
         </div>
+        </div>
+
       </div>
     </section>
   );

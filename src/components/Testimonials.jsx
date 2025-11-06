@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import ReelCarousel from './ReelCarousel';
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState([]);
@@ -125,7 +126,7 @@ export default function Testimonials() {
             ))}
           </div>
         </div>
-
+        <ReelCarousel/>
         <div className="mt-16 grid md:grid-cols-3 gap-8">
           <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl text-center">
             <div className="text-4xl font-bold text-amber-600 mb-2">10,000+</div>
