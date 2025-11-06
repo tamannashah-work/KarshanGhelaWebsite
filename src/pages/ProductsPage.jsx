@@ -185,7 +185,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {lightbox && <Lightbox src={lightbox} alt="Recipe" onClose={() => setLightbox(null)} />}
+      {lightbox.image && <Lightbox src={lightbox.image} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </div>
   );
 }
