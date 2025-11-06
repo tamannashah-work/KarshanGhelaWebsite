@@ -1,18 +1,39 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { productCategories } from '../data/products';
+import { getFeaturedProducts } from '../api/products';
 import ProductCarousel from './ProductCarousel';
+
 export default function Products() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const allProductsWithImages = productCategories
-    .flatMap(cat => cat.items.filter(item => item.image).map(item => ({ ...item, category: cat.name })));
+  const [allProductsWithImages, setAllProductsWithImages] = useState([]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % allProductsWithImages.length);
-    }, 4000);
-    return () => clearInterval(timer);
+    loadFeaturedProducts();
+  }, []);
+
+  const loadFeaturedProducts = async () => {
+    try {
+      const products = await getFeaturedProducts();
+      const productsWithImages = products
+        .filter(p => p.image_url)
+        .map(p => ({
+          ...p,
+          image: p.image_url,
+          category: p.category?.name || 'Products'
+        }));
+      setAllProductsWithImages(productsWithImages);
+    } catch (error) {
+      console.error('Error loading featured products:', error);
+    }
+  };
+
+  useEffect(() => {
+    if (allProductsWithImages.length > 0) {
+      const timer = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % allProductsWithImages.length);
+      }, 4000);
+      return () => clearInterval(timer);
+    }
   }, [allProductsWithImages.length]);
 
   const nextSlide = () => {

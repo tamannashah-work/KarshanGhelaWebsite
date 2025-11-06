@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { getActiveTestimonials } from '../api/testimonials';
 import ReelCarousel from './ReelCarousel';
 
 export default function Testimonials() {
@@ -22,14 +22,11 @@ export default function Testimonials() {
   }, [currentIndex, isAutoPlaying, testimonials.length]);
 
   const fetchTestimonials = async () => {
-    const { data, error } = await supabase
-      .from('testimonials')
-      .select('*')
-      .eq('is_active', true)
-      .order('display_order');
-
-    if (!error && data) {
+    try {
+      const data = await getActiveTestimonials();
       setTestimonials(data);
+    } catch (error) {
+      console.error('Error loading testimonials:', error);
     }
   };
 

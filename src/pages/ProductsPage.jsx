@@ -1,27 +1,49 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Filter, Search } from 'lucide-react';
-import { productCategories } from '../data/products';
+import { getAllProducts } from '../api/products';
+import { getAllCategories } from '../api/categories';
 import Lightbox from '../components/Lightbox';
 
 export default function ProductsPage() {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('all');
   const [lightbox, setLightbox] = useState(null);
+  const [allProducts, setAllProducts] = useState([]);
+  const [categories, setCategories] = useState(['all']);
+  const [loading, setLoading] = useState(true);
 
-  const allProducts = useMemo(() =>
-    productCategories.flatMap(cat =>
-      cat.items.map(item => ({ ...item, category: cat.name, categoryId: cat.id, categoryEmoji: cat.emoji }))
-    ),
-  []);
+  useEffect(() => {
+    loadData();
+  }, []);
 
-  const categories = useMemo(() =>
-    ['all', ...productCategories.map(c => c.name)],
-  []);
+  const loadData = async () => {
+    try {
+      setLoading(true);
+      const [productsData, categoriesData] = await Promise.all([
+        getAllProducts(),
+        getAllCategories()
+      ]);
+
+      setAllProducts(productsData.map(p => ({
+        ...p,
+        image: p.image_url,
+        recipe: p.recipe_url,
+        categoryName: p.category?.name || 'Uncategorized',
+        categoryEmoji: p.category?.emoji || '📦'
+      })));
+
+      setCategories(['all', ...categoriesData.map(c => c.name)]);
+    } catch (error) {
+      console.error('Error loading products:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const filtered = useMemo(() => {
     return allProducts.filter(p => {
       const matchName = p.name.toLowerCase().includes(query.toLowerCase());
-      const matchCat = category === 'all' || p.category === category;
+      const matchCat = category === 'all' || p.categoryName === category;
       return matchName && matchCat;
     });
   }, [allProducts, query, category]);
@@ -79,21 +101,34 @@ export default function ProductsPage() {
               ))}
             </div>
 
-            {filtered.length === 0 ? (
+            {loading ? (
+              <div className="text-center py-12">
+                <div className="w-12 h-12 border-4 border-amber-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                <p className="text-gray-600 text-lg">Loading products...</p>
+              </div>
+            ) : filtered.length === 0 ? (
               <div className="text-center py-12">
                 <p className="text-gray-600 text-lg">No products found matching your search.</p>
               </div>
             ) : (
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {filtered.map((p, i) => (
-                  <div key={i} className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-xl transition-all group">
+                  <div key={p._id || i} className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-xl transition-all group">
                     {p.image ? (
                       <div className="relative overflow-hidden rounded-t-lg">
                         <img
                           src={p.image}
                           alt={p.name}
                           className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.nextElementSibling.style.display = 'flex';
+                          }}
                         />
+                        <div className="h-40 bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg hidden flex-col items-center justify-center text-gray-400">
+                          <div className="text-4xl mb-2">{p.categoryEmoji || '📦'}</div>
+                          <span className="text-sm">No Image</span>
+                        </div>
                         {p.recipe && (
                           <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                             <button
@@ -113,7 +148,7 @@ export default function ProductsPage() {
                     )}
                     <div className="p-4">
                       <h3 className="font-semibold text-gray-900 mb-1 line-clamp-2">{p.name}</h3>
-                      <p className="text-sm text-amber-600 font-medium">{p.category}</p>
+                      <p className="text-sm text-amber-600 font-medium">{p.categoryName}</p>
                     </div>
                   </div>
                 ))}

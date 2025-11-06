@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageCircle } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { submitContactForm } from '../api/contact';
 
 export default function Contact(props) {
   const [formData, setFormData] = useState({
@@ -49,20 +49,19 @@ export default function Contact(props) {
 
     setIsSubmitting(true);
 
-    const { error } = await supabase
-      .from('contact_submissions')
-      .insert([formData]);
-    handleWhatsApp(`Hi my name is ${formData.name}. ${formData.message || 'I would like to know more about your products.'}.\n Contact Information:\nEmail: ${formData.email}\nPhone: ${formData.phone}` );
-    setIsSubmitting(false);
-
-    if (!error) {
+    try {
+      await submitContactForm(formData);
+      handleWhatsApp(`Hi my name is ${formData.name}. ${formData.message || 'I would like to know more about your products.'}.\n Contact Information:\nEmail: ${formData.email}\nPhone: ${formData.phone}` );
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', phone: '', message: '' });
       setTimeout(() => {
         setSubmitSuccess(false);
       }, 5000);
-    } else {
+    } catch (error) {
+      console.error('Contact form error:', error);
       setErrors({ submit: 'Failed to submit. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
