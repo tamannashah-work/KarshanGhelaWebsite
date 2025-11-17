@@ -1,0 +1,545 @@
+{
+  "categories": [
+    {
+      "name": "Whole Spices",
+      "slug": "whole-spices",
+      "description": "Premium whole spices for authentic flavor",
+      "emoji": "🌿",
+      "display_order": 1
+    },
+    {
+      "name": "Ground Spices",
+      "slug": "ground-spices",
+      "description": "Fresh ground spice powders",
+      "emoji": "🌶️",
+      "display_order": 2
+    },
+    {
+      "name": "Veg Masala",
+      "slug": "veg-masala",
+      "description": "Premium vegetarian masala blends",
+      "emoji": "🍛",
+      "display_order": 3
+    },
+    {
+      "name": "Non-Veg Masala",
+      "slug": "non-veg-masala",
+      "description": "Aromatic blends for meat dishes",
+      "emoji": "🍗",
+      "display_order": 4
+    },
+    {
+      "name": "Instant Masala",
+      "slug": "instant-masala",
+      "description": "Ready-to-use flavor enhancers",
+      "emoji": "⚡",
+      "display_order": 5
+    },
+    {
+      "name": "Mixes",
+      "slug": "mixes",
+      "description": "Traditional cooking mixes",
+      "emoji": "🧄",
+      "display_order": 6
+    },
+    {
+      "name": "Dry Fruits",
+      "slug": "dry-fruits",
+      "description": "Premium quality dry fruits",
+      "emoji": "🥜",
+      "display_order": 7
+    },
+    {
+      "name": "Chikki",
+      "slug": "chikki",
+      "description": "Brittle candy delights",
+      "emoji": "🍬",
+      "display_order": 8
+    },
+    {
+      "name": "Fruit Powders",
+      "slug": "fruit-powders",
+      "description": "Natural fruit essence powders",
+      "emoji": "🍓",
+      "display_order": 9
+    },
+    {
+      "name": "Mukhwas",
+      "slug": "mukhwas",
+      "description": "Mouth fresheners & digestive aids",
+      "emoji": "🌱",
+      "display_order": 10
+    },
+    {
+      "name": "Papad",
+      "slug": "papad",
+      "description": "Crispy traditional papadums",
+      "emoji": "🫓",
+      "display_order": 11
+    },
+    {
+      "name": "Khakhra",
+      "slug": "khakhra",
+      "description": "Crispy savory flatbreads",
+      "emoji": "🫓",
+      "display_order": 12
+    },
+    {
+      "name": "Pickles",
+      "slug": "pickles",
+      "description": "Tangy traditional preserves",
+      "emoji": "🥒",
+      "display_order": 13
+    },
+    {
+      "name": "Ready to Cook",
+      "slug": "ready-cook",
+      "description": "Instant meal solutions",
+      "emoji": "🍛",
+      "display_order": 14
+    },
+    {
+      "name": "Ready to Eat",
+      "slug": "ready-eat",
+      "description": "Heat and serve meals",
+      "emoji": "🍱",
+      "display_order": 15
+    },
+    {
+      "name": "Ayurvedic Powders",
+      "slug": "ayurvedic",
+      "description": "Traditional wellness powders",
+      "emoji": "🌿",
+      "display_order": 16
+    }
+  ],
+  "products": [
+    {
+      "category_slug": "whole-spices",
+      "name": "Coriander",
+      "description": "Premium whole coriander seeds",
+      "image_url": "/images/packaging/corriander_seeds.png",
+      "is_featured": true,
+      "display_order": 1
+    },
+    {
+      "category_slug": "whole-spices",
+      "name": "Cumin",
+      "description": "Aromatic whole cumin seeds",
+      "image_url": "/images/packaging/cumin_seeds.png",
+      "is_featured": true,
+      "display_order": 2
+    },
+    {
+      "category_slug": "whole-spices",
+      "name": "Mustard",
+      "description": "Black mustard seeds",
+      "image_url": "/images/packaging/black_mustard_seeds.png",
+      "is_featured": false,
+      "display_order": 3
+    },
+    {
+      "category_slug": "whole-spices",
+      "name": "Fenugreek",
+      "description": "Whole fenugreek seeds",
+      "image_url": "/images/different-asian-or-indian-spices-2023-11-27-05-26-13-utc-1-scaled.jpg",
+      "is_featured": false,
+      "display_order": 4
+    },
+    {
+      "category_slug": "whole-spices",
+      "name": "Sesame",
+      "description": "Premium sesame seeds",
+      "image_url": "/images/spices-in-spoons-2023-11-27-05-32-47-utc-scaled.jpg",
+      "is_featured": false,
+      "display_order": 5
+    },
+    {
+      "category_slug": "whole-spices",
+      "name": "Black Pepper",
+      "description": "Whole black peppercorns",
+      "image_url": "/images/different-asian-or-indian-spices-2023-11-27-05-26-13-utc-1-scaled.jpg",
+      "is_featured": false,
+      "display_order": 6
+    },
+    {
+      "category_slug": "ground-spices",
+      "name": "Red Chilly Powder (Hot)",
+      "description": "Hot red chilly powder",
+      "image_url": "/images/packaging/red_chilly_powder.png",
+      "is_featured": true,
+      "display_order": 1
+    },
+    {
+      "category_slug": "ground-spices",
+      "name": "Kashmiri Chilly Powder",
+      "description": "Mild Kashmiri chilly powder",
+      "image_url": "/images/packaging/red_chilly_powder.png",
+      "is_featured": false,
+      "display_order": 2
+    },
+    {
+      "category_slug": "ground-spices",
+      "name": "Turmeric Powder",
+      "description": "Pure turmeric powder",
+      "image_url": "/images/packaging/tumeric_powder.png",
+      "is_featured": true,
+      "display_order": 3
+    },
+    {
+      "category_slug": "ground-spices",
+      "name": "Coriander Powder",
+      "description": "Fresh ground coriander",
+      "image_url": "/images/packaging/corriander_powder.png",
+      "is_featured": false,
+      "display_order": 4
+    },
+    {
+      "category_slug": "ground-spices",
+      "name": "Cumin Powder",
+      "description": "Ground cumin powder",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": false,
+      "display_order": 5
+    },
+    {
+      "category_slug": "ground-spices",
+      "name": "Hing (Asafoetida)",
+      "description": "Pure hing powder",
+      "image_url": "/images/packaging/hing.png",
+      "is_featured": false,
+      "display_order": 6
+    },
+    {
+      "category_slug": "veg-masala",
+      "name": "Super Garam Masala",
+      "description": "Premium blend of authentic Indian spices",
+      "image_url": "/images/packaging/super_garam_masala.png",
+      "is_featured": true,
+      "display_order": 1
+    },
+    {
+      "category_slug": "veg-masala",
+      "name": "Paneer Butter Masala",
+      "description": "Creamy and aromatic masala perfect for paneer dishes",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": true,
+      "display_order": 2
+    },
+    {
+      "category_slug": "veg-masala",
+      "name": "Bombay Pav Bhaji Masala",
+      "description": "Authentic pav bhaji spice blend",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": false,
+      "display_order": 3
+    },
+    {
+      "category_slug": "veg-masala",
+      "name": "Chhole Chana Masala",
+      "description": "Spice blend for chickpea curry",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": false,
+      "display_order": 4
+    },
+    {
+      "category_slug": "veg-masala",
+      "name": "Dal Sabji Masala",
+      "description": "Everyday dal and vegetable seasoning",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": false,
+      "display_order": 5
+    },
+    {
+      "category_slug": "veg-masala",
+      "name": "Kitchen King Masala",
+      "description": "All-purpose kitchen masala",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": false,
+      "display_order": 6
+    },
+    {
+      "category_slug": "non-veg-masala",
+      "name": "Chicken Gravy Masala",
+      "description": "Rich gravy masala for chicken",
+      "image_url": "/images/packaging/chicken_gravy_masala.png",
+      "is_featured": true,
+      "display_order": 1
+    },
+    {
+      "category_slug": "non-veg-masala",
+      "name": "Tandoori Masala",
+      "description": "Authentic spice blend for tandoori preparations",
+      "image_url": "/images/delicious-chicken-curry-2023-11-27-05-15-43-utc-1024x684.png",
+      "is_featured": true,
+      "display_order": 2
+    },
+    {
+      "category_slug": "non-veg-masala",
+      "name": "Butter Chicken Masala",
+      "description": "Creamy butter chicken spice blend",
+      "image_url": "/images/delicious-chicken-curry-2023-11-27-05-15-43-utc-1024x684.png",
+      "is_featured": false,
+      "display_order": 3
+    },
+    {
+      "category_slug": "non-veg-masala",
+      "name": "Malwani Chicken Masala",
+      "description": "Coastal Malwani spice blend",
+      "image_url": "/images/delicious-chicken-curry-2023-11-27-05-15-43-utc-1024x684.png",
+      "is_featured": false,
+      "display_order": 4,
+      "recipe_url": "/images/recipe/malvani_chicken_masala.jpg"
+    },
+    {
+      "category_slug": "non-veg-masala",
+      "name": "Mutton Korma Masala",
+      "description": "Rich korma spice blend for mutton",
+      "image_url": "/images/delicious-chicken-curry-2023-11-27-05-15-43-utc-1024x684.png",
+      "is_featured": false,
+      "display_order": 5
+    },
+    {
+      "category_slug": "non-veg-masala",
+      "name": "Mughlai Mutton Masala",
+      "description": "Royal Mughlai spice blend",
+      "image_url": "/images/delicious-chicken-curry-2023-11-27-05-15-43-utc-1024x684.png",
+      "is_featured": false,
+      "display_order": 6,
+      "recipe_url": "/images/recipe/mughlai_mutton_masala.jpg"
+    },
+    {
+      "category_slug": "non-veg-masala",
+      "name": "Fish Fry Masala",
+      "description": "Spice coating for fish fry",
+      "image_url": "/images/delicious-chicken-curry-2023-11-27-05-15-43-utc-1024x684.png",
+      "is_featured": false,
+      "display_order": 7
+    },
+    {
+      "category_slug": "non-veg-masala",
+      "name": "Biryani Masala",
+      "description": "Aromatic biryani spice blend",
+      "image_url": "/images/delicious-chicken-curry-2023-11-27-05-15-43-utc-1024x684.png",
+      "is_featured": false,
+      "display_order": 8
+    },
+    {
+      "category_slug": "instant-masala",
+      "name": "Paneer Tikka Masala",
+      "description": "Ready paneer tikka seasoning",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": false,
+      "display_order": 1
+    },
+    {
+      "category_slug": "instant-masala",
+      "name": "Manchurian Masala",
+      "description": "Indo-Chinese manchurian spice",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": false,
+      "display_order": 2
+    },
+    {
+      "category_slug": "instant-masala",
+      "name": "Chat Masala",
+      "description": "Tangy and flavorful seasoning for street snacks",
+      "image_url": "/images/packaging/chat_masala.png",
+      "is_featured": true,
+      "display_order": 3
+    },
+    {
+      "category_slug": "instant-masala",
+      "name": "Jaljira Masala",
+      "description": "Refreshing digestive spice mix",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": false,
+      "display_order": 4
+    },
+    {
+      "category_slug": "instant-masala",
+      "name": "Schezwan Masala",
+      "description": "Spicy Schezwan seasoning",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": false,
+      "display_order": 5
+    },
+    {
+      "category_slug": "instant-masala",
+      "name": "Hakka Noodles Masala",
+      "description": "Chinese noodle seasoning",
+      "image_url": "/images/packaging/masala2.png",
+      "is_featured": false,
+      "display_order": 6
+    },
+    {
+      "category_slug": "papad",
+      "name": "Mari Papad",
+      "description": "Traditional spiced papad",
+      "image_url": "/images/gujarati-papad-or-papadum-2023-11-27-05-36-57-utc-scaled.jpg",
+      "is_featured": true,
+      "display_order": 1
+    },
+    {
+      "category_slug": "papad",
+      "name": "Green Chilli Papad",
+      "description": "Spicy green chilli papad",
+      "image_url": "/images/gujarati-papad-or-papadum-2023-11-27-05-36-57-utc-scaled-600x401.jpg",
+      "is_featured": false,
+      "display_order": 2
+    },
+    {
+      "category_slug": "papad",
+      "name": "Garlic Papad",
+      "description": "Aromatic garlic papad",
+      "image_url": "/images/gujarati-papad-or-papadum-2023-11-27-05-36-57-utc-scaled.jpg",
+      "is_featured": false,
+      "display_order": 3
+    },
+    {
+      "category_slug": "papad",
+      "name": "Jeera Papad",
+      "description": "Cumin flavored papad",
+      "image_url": "/images/gujarati-papad-or-papadum-2023-11-27-05-36-57-utc-scaled-600x401.jpg",
+      "is_featured": false,
+      "display_order": 4
+    },
+    {
+      "category_slug": "papad",
+      "name": "Red Chilli Papad",
+      "description": "Hot red chilli papad",
+      "image_url": "/images/gujarati-papad-or-papadum-2023-11-27-05-36-57-utc-scaled.jpg",
+      "is_featured": false,
+      "display_order": 5
+    },
+    {
+      "category_slug": "papad",
+      "name": "Hing Papad",
+      "description": "Asafoetida flavored papad",
+      "image_url": "/images/gujarati-papad-or-papadum-2023-11-27-05-36-57-utc-scaled-600x401.jpg",
+      "is_featured": false,
+      "display_order": 6
+    },
+    {
+      "category_slug": "dry-fruits",
+      "name": "Cashew",
+      "description": "Premium cashew nuts",
+      "image_url": "/images/tasty-spices-and-herbs-on-old-board-2023-11-27-04-56-26-utc-1-1024x683.jpg",
+      "is_featured": false,
+      "display_order": 1
+    },
+    {
+      "category_slug": "dry-fruits",
+      "name": "Almond",
+      "description": "Quality almonds",
+      "image_url": "/images/tasty-spices-and-herbs-on-old-board-2023-11-27-04-56-26-utc-1-1024x683.jpg",
+      "is_featured": false,
+      "display_order": 2
+    },
+    {
+      "category_slug": "dry-fruits",
+      "name": "Pista",
+      "description": "Premium pistachios",
+      "image_url": "/images/tasty-spices-and-herbs-on-old-board-2023-11-27-04-56-26-utc-1-1024x683.jpg",
+      "is_featured": false,
+      "display_order": 3
+    }
+  ],
+  "recipes": [
+    {
+      "name": "Recipe Card A",
+      "image_url": "/images/recipe/Recipe_Card_A.jpg"
+    },
+    {
+      "name": "Recipe Card B",
+      "image_url": "/images/recipe/Recipe_Card_B.jpg"
+    },
+    {
+      "name": "Recipe Card C",
+      "image_url": "/images/recipe/Recipe_Card_C.jpg"
+    },
+    {
+      "name": "Recipe Card D",
+      "image_url": "/images/recipe/Recipe_Card_D.jpg"
+    },
+    {
+      "name": "All in One Masala Recipe",
+      "image_url": "/images/recipe/all_in_one_masala.jpg"
+    },
+    {
+      "name": "Garlic Bread Masala Recipe",
+      "image_url": "/images/recipe/garlic_bread_masala.jpg"
+    },
+    {
+      "name": "Green Chicken Masala Recipe",
+      "image_url": "/images/recipe/green_chicken_masala.jpg"
+    },
+    {
+      "name": "Maggi Noodles Masala Recipe",
+      "image_url": "/images/recipe/maggi_noodles_masala.jpg"
+    },
+    {
+      "name": "Peri Peri Seasoning Masala Recipe",
+      "image_url": "/images/recipe/peri_peri_seasoning_masala.jpg"
+    },
+    {
+      "name": "Dal Ghost Masala Recipe",
+      "image_url": "/images/recipe/dal_ghost_masala.jpg"
+    },
+    {
+      "name": "Dum Aloo Masala Recipe",
+      "image_url": "/images/recipe/dum_aloo_masala.jpg"
+    },
+    {
+      "name": "Egg Ghotala Recipe",
+      "image_url": "/images/recipe/edd_ghotala.jpg"
+    },
+    {
+      "name": "Malvani Chicken Masala Recipe",
+      "image_url": "/images/recipe/malvani_chicken_masala.jpg"
+    },
+    {
+      "name": "Meal Masala Recipe",
+      "image_url": "/images/recipe/meal_masala.jpg"
+    },
+    {
+      "name": "Mughlai Mutton Masala Recipe",
+      "image_url": "/images/recipe/mughlai_mutton_masala.jpg"
+    },
+    {
+      "name": "Nawabi Chicken Masala Recipe",
+      "image_url": "/images/recipe/nawabi_chicken_masala.jpg"
+    },
+    {
+      "name": "Pizza Gravy Masala Recipe",
+      "image_url": "/images/recipe/pizza_gravy_masala.jpg"
+    },
+    {
+      "name": "Punjabi Gravy Masala Recipe",
+      "image_url": "/images/recipe/punjabi_gravy_masala.jpg"
+    }
+  ],
+  "testimonials": [
+    {
+      "customer_name": "Rajesh Patel",
+      "content": "The quality is outstanding! I have been using their masalas for over 10 years.",
+      "rating": 5,
+      "is_active": true,
+      "display_order": 1
+    },
+    {
+      "customer_name": "Priya Sharma",
+      "content": "Best spices I have ever used. The flavor is authentic and the freshness is unmatched.",
+      "rating": 5,
+      "is_active": true,
+      "display_order": 2
+    },
+    {
+      "customer_name": "Amit Kumar",
+      "content": "Highly recommend! Fast delivery and excellent customer service. Keep up the good work!",
+      "rating": 5,
+      "is_active": true,
+      "display_order": 3
+    }
+  ]
+}

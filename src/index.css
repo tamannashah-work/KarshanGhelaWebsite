@@ -74,6 +74,24 @@ html {
     font-weight: 600;
     font-style: normal;
   }
+  
+  /* Use system font for numbers */
+  body * {
+    font-variant-numeric: normal !important;
+    font-feature-settings: "lnum" 0;
+  }
+  
+  /* Reset numbers to use system font */
+  input, textarea, button, select, [class*="text-"], [class*="text-"] * {
+    font-feature-settings: "lnum" 1;
+  }
+  
+  /* Force numbers to use system font */
+  @supports (font-variant-numeric: tabular-nums) {
+    body {
+      font-feature-settings: "tnum" 0 "lnum" 0;
+    }
+  }
 }
 /* Hide scrollbar for WebKit browsers */
 .scrollbar-hide::-webkit-scrollbar {

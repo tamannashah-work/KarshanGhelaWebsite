@@ -64,7 +64,7 @@ export default function Hero() {
               </button>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-12 max-w-4xl mx-auto px-4">
+            {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-12 max-w-4xl mx-auto px-4">
               <div className="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-xl shadow-xl text-center border border-white/20">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500/90 rounded-full flex items-center justify-center mx-auto mb-2">
                   <Store className="text-white w-5 h-5 sm:w-6 sm:h-6" />
@@ -93,7 +93,7 @@ export default function Hero() {
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1">100%</h3>
                 <p className="text-white/90 text-sm sm:text-base font-medium">Pure & Natural</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

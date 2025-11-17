@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <div className=" pt-5 pb-16  bg-gradient-to-br from-green-100 to-amber-100">
       <About />
-
+      
       <section className=" pb-8 ">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
@@ -50,14 +50,14 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Global Reach</h3>
               <p className="text-gray-600 leading-relaxed text-center">
-                From Navsari to the world — serving families across India, USA, UK, Canada, Australia, New Zealand and beyond with authentic Indian flavours.
+                From Navsari to the world — serving families across India, USA, UK, Canada, and beyond with authentic Indian flavours.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* <section className="py-16 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -100,7 +100,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       <section className="py-16 bg-gradient-to-r from-green-700 to-green-800">
         <div className="container mx-auto px-4">
