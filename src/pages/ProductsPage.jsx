@@ -109,69 +109,35 @@ export default function ProductsPage() {
               ))}
             </div>
 
-            {loading ? (
-              <div className="text-center py-12">
-                <div className="w-12 h-12 border-4 border-amber-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                <p className="text-gray-600 text-lg">Loading products...</p>
-              </div>
-            ) : filtered.length === 0 ? (
-              <div className="text-center py-12">
-                <p className="text-gray-600 text-lg">No products found matching your search.</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {filtered.map((p, i) => (
-                  <div key={p._id || i} className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-xl transition-all group">
-                    {p.image ? (
-                      <div className="relative overflow-hidden rounded-t-lg">
-                        <img
-                          src={p.image}
-                          alt={p.name}
-                          className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300"
-                          onError={(e) => {
-                            e.target.style.display = 'none';
-                            e.target.nextElementSibling.style.display = 'flex';
-                          }}
-                        />
-                        <div className="h-40 bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg hidden flex-col items-center justify-center text-gray-400">
-                          <div className="text-4xl mb-2">{p.categoryEmoji || '📦'}</div>
-                          <span className="text-sm">No Image</span>
-                        </div>
-                        {p.recipe && (
-                          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                console.log('Recipe URL:', p.recipe_url); // Debug log
-                                console.log('Mapped recipe:', p.recipe);   // Debug log
-                                if (p.recipe) {
-                                  setLightboxImage(p.recipe);
-                                  setLightboxAlt(`Recipe for ${p.name}`);
-                                } else {
-                                  console.warn('No recipe URL found for product:', p.name);
-                                }
-                              }}
-                              className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-semibold text-sm"
-                            >
-                              View Recipe
-                            </button>
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <div className="h-40 bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg flex flex-col items-center justify-center text-gray-400">
-                        <div className="text-4xl mb-2">{p.categoryEmoji || '📦'}</div>
-                        <span className="text-sm">No Image</span>
-                      </div>
-                    )}
-                    <div className="p-4">
-                      <h3 className="font-semibold text-gray-900 mb-1 line-clamp-2">{p.name}</h3>
-                      <p className="text-sm text-amber-600 font-medium">{p.categoryName}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {filtered.map((p, i) => (
+    <div
+      key={p._id || i}
+      className="bg-white border border-gray-200 rounded-lg p-4 shadow hover:shadow-md transition-all"
+    >
+      <h3 className="font-semibold text-gray-900 text-lg mb-1">
+        {p.name}
+      </h3>
+
+      <p className="text-sm text-amber-600 font-medium mb-2">
+        {p.categoryName}
+      </p>
+
+      {p.recipe && (
+        <button
+                  onClick={() => {
+                    setLightboxImage(p.recipe);
+                    setLightboxAlt(`Recipe for ${p.name}`);
+                  }}
+                  className="text-sm text-white bg-amber-600 hover:bg-amber-700 px-3 py-1 rounded-md mt-2"
+                >
+                  View Recipe
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
+
           </div>
         </div>
       </section>

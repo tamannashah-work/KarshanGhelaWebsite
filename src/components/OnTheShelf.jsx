@@ -1,169 +1,165 @@
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Download } from 'lucide-react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+// Custom arrow components
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} z-10 right-4`}
+      style={{ ...style, display: "block", background: "rgba(255,255,255,0.8)", borderRadius: "50%", padding: "10px", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 5px rgba(0,0,0,0.2)" }}
+      onClick={onClick}
+    >
+      <ChevronRight className="text-amber-600" size={24} />
+    </div>
+  );
+};
+
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} z-10 left-4`}
+      style={{ ...style, display: "block", background: "rgba(255,255,255,0.8)", borderRadius: "50%", padding: "10px", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 5px rgba(0,0,0,0.2)" }}
+      onClick={onClick}
+    >
+      <ChevronLeft className="text-amber-600" size={24} />
+    </div>
+  );
+};
 
 export default function OnTheShelf() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1280, // xl
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1024, // lg
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 640, // sm
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   const products = [
     {
-      name: 'Super Garam Masala',
-      category: 'Veg Masala',
-      image: '/images/Chinese-Masala-scaled.jpg',
-      description: 'Premium blend of spices for authentic Indian flavor'
+      name: 'All In One Masala',
+      category: 'Multi-Purpose',
+      image: '/images/new on the shelf/all_in_one_masala.jpg'
     },
     {
-      name: 'Paneer Butter Masala',
-      category: 'Veg Masala',
-      image: '/images/indian-garam-masala-powder-and-colourful-spices-s-2023-11-27-05-02-17-utc-scaled.jpg',
-      description: 'Creamy and aromatic masala perfect for paneer dishes'
+      name: 'Dal Ghost Masala',
+      category: 'Non-Veg',
+      image: '/images/new on the shelf/dal_ghost_masala.jpg'
     },
     {
-      name: 'Tandoori Masala',
-      category: 'Non-Veg Masala',
-      image: '/images/delicious-chicken-curry-2023-11-27-05-15-43-utc-1024x684.png',
-      description: 'Authentic spice blend for tandoori preparations'
+      name: 'Dum Aaloo Masala',
+      category: 'Veg',
+      image: '/images/new on the shelf/dum_aaloo_masala.jpg'
     },
     {
-      name: 'Chat Masala',
-      category: 'Instant Masala',
-      image: '/images/spices-in-spoons-2023-11-27-05-32-47-utc-scaled.jpg',
-      description: 'Tangy and flavorful seasoning for street snacks'
+      name: 'Egg Ghotala Masala',
+      category: 'Egg',
+      image: '/images/new on the shelf/egg_ghotala_masala.jpg'
     },
     {
-      name: 'Papad Assortment',
-      category: 'Papad',
-      image: '/images/gujarati-papad-or-papadum-2023-11-27-05-36-57-utc-scaled.jpg',
-      description: 'Crispy traditional papadums in multiple flavors'
+      name: 'Maggi Noodles Masala',
+      category: 'Instant',
+      image: '/images/new on the shelf/maggi_noodles_msala.jpg'
     },
     {
-      name: 'Dry Fruits Mix',
-      category: 'Dry Fruits',
-      image: '/images/tasty-spices-and-herbs-on-old-board-2023-11-27-04-56-26-utc-1-1024x683.jpg',
-      description: 'Premium selection of cashews, almonds & pistachios'
+      name: 'Malvani Chicken Masala',
+      category: 'Non-Veg',
+      image: '/images/new on the shelf/malvani_chicken_masala.jpg'
+    },
+    {
+      name: 'Mughlai Mutton Masala',
+      category: 'Non-Veg',
+      image: '/images/new on the shelf/mughlai_mutton_masala.jpg'
+    },
+    {
+      name: 'Nawabi Chicken Masala',
+      category: 'Non-Veg',
+      image: '/images/new on the shelf/nawabi_chicken_masala.jpg'
+    },
+    {
+      name: 'Peri Peri Seasoning',
+      category: 'Seasoning',
+      image: '/images/new on the shelf/peri_peri_seasoning_masala.jpg'
+    },
+    {
+      name: 'Pizza Gravy Masala',
+      category: 'Pizza',
+      image: '/images/new on the shelf/pizza_gravy_masala.jpg'
     }
   ];
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % products.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
-  };
-
-  const getVisibleProducts = () => {
-    const visible = [];
-    for (let i = 0; i < 3; i++) {
-      visible.push(products[(currentIndex + i) % products.length]);
-    }
-    return visible;
-  };
-
   return (
     <section className="py-12 sm:py-20 bg-gradient-to-br from-amber-100 to-orange-100">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-10">
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl title font-bold md:text-4xl text-gray-900 mb-3 sm:mb-4">
+          <h2 className="text-2xl title sm:text-3xl font-bold md:text-4xl text-gray-900 mb-3 sm:mb-4">
             New On The Shelf
           </h2>
           <div className="w-16 sm:w-24 h-1 bg-amber-600 mx-auto mb-4 sm:mb-6"></div>
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-            Discover our most popular and bestselling products
+            Discover our latest and most popular products
           </p>
         </div>
 
-        <div className="relative mb-8 sm:mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {getVisibleProducts().map((product, idx) => (
-              <div
-                key={idx}
-                className={`relative group rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all ${
-                  idx === 1 ? 'md:scale-105 md:z-10' : ''
-                }`}
-              >
-                <div className="relative w-full h-48 sm:h-56 md:h-64 overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
-                  <div className="text-right">
-                    <span className="inline-block bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                      {product.category}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold text-xl mb-2">{product.name}</h3>
-                    <p className="text-amber-100 text-sm leading-relaxed">
-                      {product.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <button
-            onClick={prevSlide}
-            className="absolute -left-6 top-1/2 -translate-y-1/2 bg-amber-600 hover:bg-amber-700 text-white p-3 rounded-full shadow-lg transition-all transform hover:scale-110 hidden md:flex items-center justify-center z-20"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="absolute -right-6 top-1/2 -translate-y-1/2 bg-amber-600 hover:bg-amber-700 text-white p-3 rounded-full shadow-lg transition-all transform hover:scale-110 hidden md:flex items-center justify-center z-20"
-          >
-            <ChevronRight size={24} />
-          </button>
-
-          <div className="flex justify-center gap-2 mt-8">
-            {products.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`transition-all rounded-full ${
-                  index === currentIndex
-                    ? 'w-8 h-3 bg-amber-600'
-                    : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
+        <div className="max-w-6xl mx-auto px-4 relative">
+          <Slider {...settings} className="py-6">
+  {products.map((product, idx) => (
+    <div key={idx} className="px-2 outline-none h-full">
+      <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 mx-2 h-full flex flex-col w-64"> {/* Added fixed width */}
+        <div className="h-80 overflow-hidden flex-shrink-0"> {/* Increased height to h-80 */}
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+            style={{ minHeight: '100%', objectPosition: 'center' }}
+            loading="lazy"
+          />
+        </div>
+        <div className="p-3 flex-1 flex flex-col"> {/* Reduced padding */}
+          <div className="flex justify-between items-start">
+            <h3 className="text-sm font-semibold text-gray-800 line-clamp-2" title={product.name}>{product.name}</h3>
+            <span className="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full whitespace-nowrap ml-2">
+              {product.category}
+            </span>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="md:w-1/2 flex items-center justify-center">
-            <div className="w-full h-full flex items-center justify-center bg-white rounded-2xl shadow-xl p-4">
-              <img 
-                src="/images/masalas.png" 
-                alt="On The Shelf" 
-                className="max-w-full max-h-[300px] w-auto h-auto object-contain" 
-                style={{ maxHeight: 'min(300px, 80vh)' }}
-              />
-            </div>
-          </div>
-          <div className="md:w-1/2 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-6 text-center text-white shadow-xl">
-          <div className="mb-4">
-            <Download size={48} className="mx-auto text-amber-100" />
-          </div>
-          <p className="text-amber-50 mb-6 leading-relaxed">
-            Get a comprehensive look at our complete range of 500+ authentic products
-          </p>
-          <div className="mt-8 sm:mt-12 text-center px-4">
-            <a
-              href="/catalogue.pdf"
-              download
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white hover:bg-gray-100 text-amber-700 border border-amber-600 px-4 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto"
-            >
-              <Download size={18} className="flex-shrink-0" />
-              <span>Download Full Catalogue</span>
-            </a>
-          </div>
-        </div>
-        </div>
+      </div>
+    </div>
+  ))}
+</Slider>
 
+        </div>
       </div>
     </section>
   );

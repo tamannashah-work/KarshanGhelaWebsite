@@ -144,7 +144,7 @@ export default function Contact(props) {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Business Hours</h3>
                   <p className="text-gray-600">9:30 AM - 7:30 PM</p>
-                  <p className="text-gray-500 text-sm">All Days</p>
+                  <p className="text-gray-500 text-sm">Mon-Sat</p>
                 </div>
               </div>
             </div>
