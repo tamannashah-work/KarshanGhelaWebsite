@@ -34,7 +34,7 @@ export default function Header() {
             <MapPin size={16} />
             <span>Navsari, Gujarat</span>
           </div>
-          <span>Open: 9:30 AM - 7:30 PM</span>
+          <span>Open: 9:30 AM - 7:30 PM Mon-Sat</span>
         </div>
 
         {/* Hamburger button (mobile only) */}
