@@ -9,10 +9,10 @@ const NextArrow = (props) => {
   return (
     <div
       className={`${className} z-10 right-4`}
-      style={{ ...style, display: "block", background: "rgba(255,255,255,0.8)", borderRadius: "50%", padding: "10px", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 5px rgba(0,0,0,0.2)" }}
+      style={{ ...style, background: "rgba(251, 146, 60, 0.9)", borderRadius: "50%", padding: "10px", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 5px rgba(0,0,0,0.2)" }}
       onClick={onClick}
     >
-      <ChevronRight className="text-amber-600" size={24} />
+      <ChevronRight className="text-black" size={24} />
     </div>
   );
 };
@@ -22,10 +22,10 @@ const PrevArrow = (props) => {
   return (
     <div
       className={`${className} z-10 left-4`}
-      style={{ ...style, display: "block", background: "rgba(255,255,255,0.8)", borderRadius: "50%", padding: "10px", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 5px rgba(0,0,0,0.2)" }}
+      style={{ ...style, background: "rgba(251, 146, 60, 0.9)", borderRadius: "50%", padding: "10px", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 5px rgba(0,0,0,0.2)" }}
       onClick={onClick}
     >
-      <ChevronLeft className="text-amber-600" size={24} />
+      <ChevronLeft className="text-black" size={24} />
     </div>
   );
 };
@@ -71,6 +71,16 @@ export default function OnTheShelf() {
       name: 'All In One Masala',
       category: 'Multi-Purpose',
       image: '/images/new on the shelf/all_in_one_masala.jpg'
+    },
+    {
+      name: 'Magajtari Rabdi',
+      category: 'Multi-Purpose',
+      image: '/images/new on the shelf/magajtari_rabdi.jpg'
+    },
+    {
+      name: 'Mutton Thepla Masala',
+      category: 'Multi-Purpose',
+      image: '/images/new on the shelf/mutton_thepla_masala.jpg'
     },
     {
       name: 'Dal Ghost Masala',

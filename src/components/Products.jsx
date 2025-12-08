@@ -1,4 +1,5 @@
 import { Download } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Products() {
   const products = [
@@ -18,6 +19,10 @@ export default function Products() {
       image: "/images/2.jpg",
     },
   ];
+  const navigate=useNavigate();
+  const handleProducts=()=>{
+    navigate("/products");    
+  }
 
   return (
     <section
@@ -66,12 +71,12 @@ export default function Products() {
                 authentic products
               </p>
 
-              <a
-                href="/products"
+              <button
+                onClick={handleProducts}
                 className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all inline-block"
               >
                 View All Products
-              </a>
+              </button>
             </div>
 
             {/* Download Catalogue Block */}
