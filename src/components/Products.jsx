@@ -2,6 +2,7 @@ import { Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function Products() {
+
   const products = [
     {
       name: "Premium Spice Mix",
@@ -19,6 +20,7 @@ export default function Products() {
       image: "/images/2.jpg",
     },
   ];
+
   const navigate=useNavigate();
   const handleProducts=()=>{
     navigate("/products");    
@@ -33,17 +35,68 @@ export default function Products() {
         {/* Heading */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 title">
-            Our Premium Products
+            🌍 Worldwide Shipping
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Discover our wide range of authentic Indian spices and traditional
-            products
+            We offer reliable masala shipping services worldwide — USA, UK, New Zealand, Panama, Australia, and many more international destinations.
+            <br />
+            Local delivery within India is also available.
           </p>
         </div>
 
-        {/* Product Grid */}
+        {/* Shipping & Packaging Cards */}
         <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 mb-12">
+            {/* Shipping Info Card */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-amber-100 transform hover:scale-105 transition-all">
+                <div className="text-4xl mb-4">🚢</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Global Reach</h3>
+                <p className="text-gray-600 leading-relaxed">
+                    Every package is handled with care to ensure maximum freshness and aroma when it reaches your doorstep. 
+                    Whether you are in the Americas, Europe, or Oceania, we deliver authentic flavors to you.
+                </p>
+            </div>
+
+            {/* Packaging Details Card */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-amber-100 transform hover:scale-105 transition-all">
+                <div className="text-4xl mb-4">📦</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Packaging Details</h3>
+                <ul className="text-gray-600 space-y-3">
+                    <li className="flex items-start gap-2">
+                        <span className="text-amber-600 mt-1">•</span>
+                        <span>Masalas available in 250 g and 500 g sealed packs</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                        <span className="text-amber-600 mt-1">•</span>
+                        <span>Papads vacuum-packed in 500 g for long-lasting crispness</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                        <span className="text-amber-600 mt-1">•</span>
+                        <span>Hygienic, secure packaging ideal for international shipping</span>
+                    </li>
+                </ul>
+            </div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto px-4 mb-12">
+            <div className="bg-amber-50 rounded-2xl p-6 shadow-md border border-amber-100 text-center transform hover:scale-105 transition-all">
+                <div className="text-3xl mb-3">💬</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Get Your Quote</h3>
+                <p className="text-gray-700 text-sm font-medium italic mb-6 leading-relaxed">
+                    After you finalize your order, we’ll provide a detailed quote including product prices and shipping charges based on your location.
+                </p>
+                <button
+                    onClick={() => navigate("/contact")}
+                    className="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-2 rounded-lg font-bold text-base hover:shadow-lg hover:from-amber-700 hover:to-orange-700 transition-all transform hover:-translate-y-1"
+                >
+                    Order Yours
+                </button>
+             </div>
+          </div>
+
+        {/* Product Grid */}
+        <div className="max-w-6xl mx-auto mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
             {products.map((product, idx) => (
               <div
@@ -58,6 +111,7 @@ export default function Products() {
               </div>
             ))}
           </div>
+        </div>
 
           {/* SIDE-BY-SIDE CTA + DOWNLOAD (50% each) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12 px-4">
