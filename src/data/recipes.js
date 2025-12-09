@@ -10,7 +10,7 @@ export const recipes = [
   { src: '/images/recipe/peri_peri_seasoning_masala.jpg', alt: 'Peri Peri Seasoning Masala Recipe' },
   { src: '/images/recipe/dal_ghost_masala.jpg', alt: 'Dal Ghost Masala Recipe' },
   { src: '/images/recipe/dum_aloo_masala.jpg', alt: 'Dum Aloo Masala Recipe' },
-  { src: '/images/recipe/edd_ghotala.jpg', alt: 'Egg Ghotala Recipe' },
+  { src: '/images/recipe/egg_ghotala.jpg', alt: 'Egg Ghotala Recipe' },
   { src: '/images/recipe/malvani_chicken_masala.jpg', alt: 'Malvani Chicken Masala Recipe' },
   { src: '/images/recipe/meal_masala.jpg', alt: 'Meal Masala Recipe' },
   { src: '/images/recipe/mughlai_mutton_masala.jpg', alt: 'Mughlai Mutton Masala Recipe' },
