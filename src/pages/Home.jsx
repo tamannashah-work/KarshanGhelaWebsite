@@ -4,12 +4,14 @@ import OnTheShelf from '../components/OnTheShelf';
 import Products from '../components/Products';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <>
       <Hero />
-      <div className="py-16 bg-white   bg-gradient-to-br from-green-100 to-green-200">
+      <div className="py-16 bg-gradient-to-br from-green-100 to-green-200">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl title md:text-4xl title text-gray-900 mb-6">
@@ -20,6 +22,12 @@ export default function Home() {
               with unwavering commitment to quality. Experience the heritage of flavor that has been
               passed down through generations.
             </p>
+            <button
+              onClick={() => navigate('/about')}
+              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-all inline-block shadow-lg"
+            >
+              Read More
+            </button>
           </div>
         </div>
       </div>

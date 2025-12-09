@@ -69,62 +69,62 @@ export default function OnTheShelf() {
   const products = [
     {
       name: 'All In One Masala',
-      category: 'Multi-Purpose',
+      category: 'Multi-Purpose Masala',
       image: '/images/new on the shelf/all_in_one_masala.jpg'
     },
     {
       name: 'Magajtari Rabdi',
-      category: 'Multi-Purpose',
+      category: 'Multi-Purpose Masala',
       image: '/images/new on the shelf/magajtari_rabdi.jpg'
     },
     {
-      name: 'Mutton Thepla Masala',
-      category: 'Multi-Purpose',
-      image: '/images/new on the shelf/mutton_thepla_masala.jpg'
+      name: 'Mutton Tapela Masala',
+      category: 'Non-Veg Masala',
+      image: '/images/new on the shelf/mutton_tapela_masala.jpg'
     },
     {
       name: 'Dal Ghost Masala',
-      category: 'Non-Veg',
+      category: 'Non-Veg Masala',
       image: '/images/new on the shelf/dal_ghost_masala.jpg'
     },
     {
       name: 'Dum Aaloo Masala',
-      category: 'Veg',
+      category: 'Veg Masala',
       image: '/images/new on the shelf/dum_aaloo_masala.jpg'
     },
     {
       name: 'Egg Ghotala Masala',
-      category: 'Egg',
+      category: 'Non-Veg Masala',
       image: '/images/new on the shelf/egg_ghotala_masala.jpg'
     },
     {
       name: 'Maggi Noodles Masala',
-      category: 'Instant',
+      category: 'Instant Masala',
       image: '/images/new on the shelf/maggi_noodles_msala.jpg'
     },
     {
       name: 'Malvani Chicken Masala',
-      category: 'Non-Veg',
+      category: 'Non-Veg Masala',
       image: '/images/new on the shelf/malvani_chicken_masala.jpg'
     },
     {
       name: 'Mughlai Mutton Masala',
-      category: 'Non-Veg',
+      category: 'Non-Veg Masala',
       image: '/images/new on the shelf/mughlai_mutton_masala.jpg'
     },
     {
       name: 'Nawabi Chicken Masala',
-      category: 'Non-Veg',
+      category: 'Non-Veg Masala',
       image: '/images/new on the shelf/nawabi_chicken_masala.jpg'
     },
     {
       name: 'Peri Peri Seasoning',
-      category: 'Seasoning',
+      category: 'Seasoning Masala',
       image: '/images/new on the shelf/peri_peri_seasoning_masala.jpg'
     },
     {
       name: 'Pizza Gravy Masala',
-      category: 'Pizza',
+      category: 'Veg Masala',
       image: '/images/new on the shelf/pizza_gravy_masala.jpg'
     }
   ];
