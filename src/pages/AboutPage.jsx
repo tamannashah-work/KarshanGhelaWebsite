@@ -1,6 +1,8 @@
 import { Heart, Leaf, Shield, TrendingUp, Award, Users, Store, Clock,Globe } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import About from '../components/About';
 export default function AboutPage() {
+  const navigate = useNavigate();
   return (
     <div className=" pt-5 pb-16  bg-gradient-to-br from-green-100 to-amber-100">
       <About />
@@ -113,18 +115,18 @@ export default function AboutPage() {
               Our knowledgeable staff is ready to help you find the perfect spices and products for your needs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="/products"
+              <button
+                onClick={() => navigate('/products')}
                 className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all inline-block"
               >
                 Explore Products
-              </a>
-              <a
-                href="/contact"
+              </button>
+              <button
+                onClick={() => navigate('/contact')}
                 className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-amber-600 px-8 py-3 rounded-lg font-semibold transition-all inline-block"
               >
                 Contact Us
-              </a>
+              </button>
             </div>
           </div>
         </div>
