@@ -104,7 +104,7 @@ export default function ProductsPage() {
                       : 'bg-white text-gray-700 hover:bg-amber-100'
                   }`}
                 >
-                  {c}
+                  {c === 'all' ? 'All' : c}
                 </button>
               ))}
             </div>
