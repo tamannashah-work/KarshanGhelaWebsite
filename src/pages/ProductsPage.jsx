@@ -3,6 +3,7 @@ import { Filter, Search } from 'lucide-react';
 import { getAllProducts } from '../api/products';
 import { getAllCategories } from '../api/categories';
 import Lightbox from '../components/Lightbox';
+import SEO from '../components/SEO';
 
 export default function ProductsPage() {
   const [query, setQuery] = useState('');
@@ -53,6 +54,10 @@ export default function ProductsPage() {
 
   return (
     <div className="pt-18 pb-16 bg-gradient-to-br from-green-100 to-amber-100">
+      <SEO 
+        title="Our Products - Karshan Ghela | Spices, Masalas & More"
+        description="Explore our wide range of authentic spices, masalas, pickles, and traditional Indian products. Quality and purity guaranteed."
+      />
       <section className="py-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">

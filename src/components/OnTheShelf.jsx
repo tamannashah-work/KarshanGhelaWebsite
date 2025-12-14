@@ -146,7 +146,7 @@ export default function OnTheShelf() {
           <Slider {...settings} className="py-6">
   {products.map((product, idx) => (
     <div key={idx} className="px-2 outline-none h-full">
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 mx-2 h-full flex flex-col w-64"> {/* Added fixed width */}
+      <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 mx-auto h-full flex flex-col w-64">
         <div className="h-80 overflow-hidden flex-shrink-0"> {/* Increased height to h-80 */}
           <img
             src={product.image}

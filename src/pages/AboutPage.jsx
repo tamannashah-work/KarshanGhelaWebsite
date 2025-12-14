@@ -1,10 +1,15 @@
 import { Heart, Leaf, Shield, TrendingUp, Award, Users, Store, Clock,Globe } from 'lucide-react';
+import SEO from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import About from '../components/About';
 export default function AboutPage() {
   const navigate = useNavigate();
   return (
     <div className=" pt-5 pb-16  bg-gradient-to-br from-green-100 to-amber-100">
+      <SEO 
+        title="About Us - Karshan Ghela | Heritage Since 1912"
+        description="Learn about our 100+ year legacy of serving authentic Indian spices. Karshan Ghela - A name synonymous with purity and quality in Navsari."
+      />
       <About />
 
       <section className=" pb-8 ">

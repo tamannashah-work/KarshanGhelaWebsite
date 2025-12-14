@@ -4,13 +4,34 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
+<!-- manually updated -->
 
 <url>
   <loc>https://karshanghela.co.in/</loc>
-  <lastmod>2025-12-14T17:34:06+00:00</lastmod>
+  <lastmod>2025-12-14T18:22:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
 </url>
 
+<url>
+  <loc>https://karshanghela.co.in/about</loc>
+  <lastmod>2025-12-14T18:22:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://karshanghela.co.in/products</loc>
+  <lastmod>2025-12-14T18:22:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://karshanghela.co.in/contact</loc>
+  <lastmod>2025-12-14T18:22:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
 
 </urlset>

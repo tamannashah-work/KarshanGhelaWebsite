@@ -1,4 +1,5 @@
 import Hero from '../components/Hero';
+import SEO from '../components/SEO';
 import ProductCarousel from '../components/ProductCarousel';
 import OnTheShelf from '../components/OnTheShelf';
 import Products from '../components/Products';
@@ -10,6 +11,10 @@ export default function Home() {
   const navigate = useNavigate();
   return (
     <>
+      <SEO 
+        title="Karshan Ghela - Authentic Indian Spices & Traditional Grinding Services"
+        description="Experience the heritage of flavor with Karshan Ghela. Serving authentic Indian spices, pickles, and traditional grinding services since 1912."
+      />
       <Hero />
       <div className="py-16 bg-gradient-to-br from-green-100 to-green-200">
         <div className="container mx-auto px-4">
