@@ -39,7 +39,7 @@ export default function Products() {
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 leading-relaxed">
-            We offer reliable masala shipping services worldwide — USA, UK, New Zealand, Panama, Australia, and many more international destinations.
+            We offer reliable masala shipping services worldwide — USA, UK, New Zealand, Panama, Australia, Canada and many more international destinations.
             <br />
             Local delivery within India is also available.
           </p>
