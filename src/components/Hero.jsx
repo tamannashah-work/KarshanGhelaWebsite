@@ -1,6 +1,8 @@
 import { Award, Users, Store, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Hero() {
+  const navigate = useNavigate();
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -51,7 +53,7 @@ export default function Hero() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button
-                onClick={() => scrollToSection('products')}
+                onClick={() => navigate('/products')}
                 className="bg-green-700 hover:bg-green-800 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-2xl"
               >
                 Explore Products
