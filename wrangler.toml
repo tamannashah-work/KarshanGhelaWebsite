@@ -1,7 +1,0 @@
-name = "KarshanGhelaWebsite"
-compatibility_date = "2023-05-18"
-
-[build]
-command = ""
-publish = "dist"
-

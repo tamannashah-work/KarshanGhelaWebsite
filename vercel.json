@@ -1,10 +1,8 @@
 {
-  "version": 2,
-  "name": "KarshanGhelaWebsite",
-  "builds": [
+  "rewrites": [
     {
-      "src": "dist/**",
-      "use": "@vercel/static"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
