@@ -254,7 +254,19 @@ export default function Contact(props) {
 
               {errors.submit && <p className="text-red-500 text-sm">{errors.submit}</p>}
 
-              <button
+              <div className="flex flex-col md:flex-row gap-4">
+                  <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open('mailto:Kamnagandhi27@gmail.com', '_blank');
+                  }}
+                  className="w-full bg-white border-2 border-green-600 text-green-700 hover:bg-green-50 font-semibold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 transform hover:scale-105"
+                >
+                  <Mail size={20} />
+                  Send Email
+                </button>
+                <button
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 transform hover:scale-105"
@@ -271,6 +283,7 @@ export default function Contact(props) {
                   </>
                 )}
               </button>
+              </div>
             </form>
           </div>
         </div>

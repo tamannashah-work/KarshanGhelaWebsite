@@ -12,17 +12,19 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <ScrollToTop />
+        <div className="flex flex-col min-h-screen bg-gradient-to-br from-green-100 to-amber-100">
+          <ScrollToTop />
           <Header />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/products" element={<ProductsPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-            </Routes>
-          </main>
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+              </Routes>
+            </main>
           <Footer />
+        </div>
       </Router>
     </HelmetProvider>
   );
